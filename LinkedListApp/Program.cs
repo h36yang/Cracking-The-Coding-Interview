@@ -106,6 +106,97 @@ namespace LinkedListApp
             Console.WriteLine($"Sum List: {result254}");
 
             #endregion
+
+            #region 2.6
+
+            // 2.6 Test Case 1
+            var head261 = new Node(1);
+            head261.Next = new Node(2);
+            head261.Next.Next = new Node(3);
+            head261.Next.Next.Next = new Node(4);
+            head261.Next.Next.Next.Next = new Node(3);
+            head261.Next.Next.Next.Next.Next = new Node(2);
+            head261.Next.Next.Next.Next.Next.Next = new Node(1);
+            Console.WriteLine($"Linked List: {head261}");
+
+            bool result261 = PalindromeLinkedList.IsPalindrome(head261);
+            Console.WriteLine($" is Palindrome? {result261}");
+
+            // 2.6 Test Case 2
+            var head262 = new Node(1);
+            head262.Next = new Node(2);
+            head262.Next.Next = new Node(3);
+            head262.Next.Next.Next = new Node(4);
+            head262.Next.Next.Next.Next = new Node(5);
+            head262.Next.Next.Next.Next.Next = new Node(2);
+            head262.Next.Next.Next.Next.Next.Next = new Node(1);
+            Console.WriteLine($"Linked List: {head262}");
+
+            bool result262 = PalindromeLinkedList.IsPalindrome(head262);
+            Console.WriteLine($" is Palindrome? {result262}");
+
+            #endregion
+
+            #region 2.7
+
+            // 2.7 Test Case 1
+            var head271_1 = new Node(1);
+            head271_1.Next = new Node(2);
+            head271_1.Next.Next = new Node(3);
+            head271_1.Next.Next.Next = new Node(4);
+            head271_1.Next.Next.Next.Next = new Node(5);
+            head271_1.Next.Next.Next.Next.Next = new Node(6);
+            head271_1.Next.Next.Next.Next.Next.Next = new Node(7);
+            var head271_2 = new Node(10);
+            head271_2.Next = new Node(9);
+            head271_2.Next.Next = new Node(8);
+            head271_2.Next.Next.Next = head271_1.Next.Next.Next.Next.Next.Next;
+            Console.WriteLine($"List 1: {head271_1}");
+            Console.WriteLine($"List 2: {head271_2}");
+
+            var newHead271 = IntersectingLinkedList.Intersection(head271_1, head271_2);
+            Console.WriteLine($"Intersection: {newHead271}");
+
+            // 2.7 Test Case 2
+            var head272_1 = new Node(1);
+            head272_1.Next = new Node(2);
+            head272_1.Next.Next = new Node(3);
+            head272_1.Next.Next.Next = new Node(4);
+            head272_1.Next.Next.Next.Next = new Node(5);
+            head272_1.Next.Next.Next.Next.Next = new Node(6);
+            head272_1.Next.Next.Next.Next.Next.Next = new Node(7);
+            var head272_2 = new Node(10);
+            head272_2.Next = new Node(9);
+            head272_2.Next.Next = new Node(8);
+            head272_2.Next.Next.Next = new Node(7);
+            Console.WriteLine($"List 1: {head272_1}");
+            Console.WriteLine($"List 2: {head272_2}");
+
+            var newHead272 = IntersectingLinkedList.Intersection(head272_1, head272_2);
+            string result272 = newHead272 == null ? "does not exist" : newHead272.ToString();
+            Console.WriteLine($"Intersection: {result272}");
+
+            // 2.7 Test Case 3
+            var head273_1 = new Node(1);
+            head273_1.Next = new Node(2);
+            head273_1.Next.Next = new Node(3);
+            head273_1.Next.Next.Next = new Node(4);
+            head273_1.Next.Next.Next.Next = new Node(5);
+            head273_1.Next.Next.Next.Next.Next = new Node(6);
+            head273_1.Next.Next.Next.Next.Next.Next = new Node(7);
+            var head273_2 = new Node(10);
+            head273_2.Next = new Node(9);
+            head273_2.Next.Next = new Node(8);
+            head273_2.Next.Next.Next = head273_1.Next.Next.Next.Next;
+            Console.WriteLine($"List 1: {head273_1}");
+            Console.WriteLine($"List 2: {head273_2}");
+
+            var newHead273_1 = IntersectingLinkedList.Intersection(head273_1, head273_2);
+            Console.WriteLine($"Intersection: {newHead273_1}");
+            var newHead273_2 = IntersectingLinkedList.Intersection(head273_2, head273_1);
+            Console.WriteLine($"Intersection: {newHead273_2}");
+
+            #endregion
         }
     }
 }
