@@ -197,6 +197,46 @@ namespace LinkedListApp
             Console.WriteLine($"Intersection: {newHead273_2}");
 
             #endregion
+
+            #region 2.8
+
+            // 2.8 Test Case 1
+            var head281 = new Node(3);
+            head281.Next = new Node(5);
+            head281.Next.Next = new Node(8);
+            head281.Next.Next.Next = new Node(5);
+            head281.Next.Next.Next.Next = new Node(10);
+            head281.Next.Next.Next.Next.Next = new Node(2);
+            head281.Next.Next.Next.Next.Next.Next = new Node(1);
+            var node281 = CircularLinkedList.GetLoopStartsAt(head281);
+            if (node281 == null)
+            {
+                Console.WriteLine($"No loop detected.");
+            }
+            else
+            {
+                Console.WriteLine($"Loop starts at node {node281.Data}");
+            }
+
+            // 2.8 Test Case 2
+            var head282 = new Node(3);
+            head282.Next = new Node(5);
+            head282.Next.Next = new Node(8);
+            head282.Next.Next.Next = new Node(5);
+            head282.Next.Next.Next.Next = new Node(10);
+            head282.Next.Next.Next.Next.Next = new Node(2);
+            head282.Next.Next.Next.Next.Next.Next = head282.Next.Next.Next;
+            var node282 = CircularLinkedList.GetLoopStartsAt(head282);
+            if (node282 == null)
+            {
+                Console.WriteLine($"No loop detected.");
+            }
+            else
+            {
+                Console.WriteLine($"Loop starts at node {node282.Data}");
+            }
+
+            #endregion
         }
     }
 }
