@@ -1,4 +1,5 @@
 using System;
+using System.Text;
 
 namespace StackAndQueueApp
 {
@@ -34,9 +35,20 @@ namespace StackAndQueueApp
             return _top.Data;
         }
 
-        public bool IsEmpty()
+        public bool IsEmpty() => _top == null;
+
+        public override string ToString()
         {
-            return _top == null;
+            var stringBuilder = new StringBuilder();
+            stringBuilder.Append(_top);
+            var node = _top.Next;
+            while (node != null)
+            {
+                stringBuilder.Append(" --> ");
+                stringBuilder.Append(node);
+                node = node.Next;
+            }
+            return stringBuilder.ToString();
         }
     }
 
@@ -45,9 +57,8 @@ namespace StackAndQueueApp
         public StackNode<T> Next { get; set; }
         public T Data { get; private set; }
 
-        public StackNode(T data)
-        {
-            this.Data = data;
-        }
+        public StackNode(T data) => this.Data = data;
+
+        public override string ToString() => $"{Data}";
     }
 }
