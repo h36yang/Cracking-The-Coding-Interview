@@ -7,6 +7,7 @@ namespace TreeAndGraphApp
         public T Data { get; private set; }
         public TreeNode<T> Left { get; set; }
         public TreeNode<T> Right { get; set; }
+        public TreeNode<T> Parent { get; set; }
         public int LeftDepth { get; set; }
         public int RightDepth { get; set; }
 

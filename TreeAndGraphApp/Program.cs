@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace TreeAndGraphApp
 {
@@ -159,6 +160,64 @@ namespace TreeAndGraphApp
             var result452 = BinarySearchTree.IsBST(root452);
             TreeNode<int>.PrintTreePreOrder(root452);
             Console.WriteLine($"\nIs BST? {result452}");
+
+            #endregion
+
+            #region 4.6
+
+            // 4.6 Test Case 1
+            var root461 = new TreeNode<int>(7);
+            var node461_1 = new TreeNode<int>(3);
+            var node461_2 = new TreeNode<int>(1);
+            var node461_3 = new TreeNode<int>(5);
+            var node461_4 = new TreeNode<int>(10);
+            var node461_5 = new TreeNode<int>(9);
+            var node461_6 = new TreeNode<int>(15);
+            var node461_7 = new TreeNode<int>(11);
+            var node461_8 = new TreeNode<int>(16);
+            root461.Left = node461_1; node461_1.Parent = root461;
+            root461.Right = node461_4; node461_4.Parent = root461;
+            node461_1.Left = node461_2; node461_2.Parent = node461_1;
+            node461_1.Right = node461_3; node461_3.Parent = node461_1;
+            node461_4.Left = node461_5; node461_5.Parent = node461_4;
+            node461_4.Right = node461_6; node461_6.Parent = node461_4;
+            node461_6.Left = node461_7; node461_7.Parent = node461_6;
+            node461_6.Right = node461_8; node461_8.Parent = node461_6;
+            TreeNode<int>.PrintTreeInOrder(root461);
+            var result461_1 = SuccessorTree.FindSuccessor(node461_1);
+            var result461_2 = SuccessorTree.FindSuccessor(node461_4);
+            var result461_3 = SuccessorTree.FindSuccessor(node461_7);
+            var result461_4 = SuccessorTree.FindSuccessor(node461_3);
+            var result461_5 = SuccessorTree.FindSuccessor(node461_8);
+            Console.WriteLine($"\nSuccessor of {node461_1} is {result461_1}.");
+            Console.WriteLine($"Successor of {node461_4} is {result461_2}.");
+            Console.WriteLine($"Successor of {node461_7} is {result461_3}.");
+            Console.WriteLine($"Successor of {node461_3} is {result461_4}.");
+            Console.WriteLine($"Successor of {node461_8} is {result461_5}.");
+
+            #endregion
+
+            #region 4.7
+
+            // 4.7 Test Case 1
+            var projects471 = new string[]
+            {
+                "a", "b", "c", "d", "e", "f"
+            };
+            var dependencies471 = new KeyValuePair<string, string>[]
+            {
+                new KeyValuePair<string, string>("a", "d"),
+                new KeyValuePair<string, string>("f", "b"),
+                new KeyValuePair<string, string>("b", "d"),
+                new KeyValuePair<string, string>("f", "a"),
+                new KeyValuePair<string, string>("d", "c")
+            };
+            var result471 = BuildOrderGraph.FindBuildOrder(projects471, dependencies471);
+            foreach (string s in result471)
+            {
+                Console.Write($"{s}, ");
+            }
+            Console.WriteLine();
 
             #endregion
         }
