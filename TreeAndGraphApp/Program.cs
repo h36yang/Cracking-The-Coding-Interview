@@ -220,6 +220,47 @@ namespace TreeAndGraphApp
             Console.WriteLine();
 
             #endregion
+
+            #region 4.9
+
+            // 4.9 Test Case 1
+            var root491 = new TreeNode<int>(2);
+            root491.Left = new TreeNode<int>(1);
+            root491.Right = new TreeNode<int>(3);
+            var result491 = SequenceBinarySearchTree.AllSequences(root491);
+            Console.WriteLine("\nAll Sequences:");
+            for (int i = 0; i < result491.Count; i++)
+            {
+                Console.Write($"{i + 1}) ");
+                var sequence = result491[i];
+                foreach (var item in sequence)
+                {
+                    Console.Write($"{item} --> ");
+                }
+                Console.WriteLine();
+            }
+
+            // 4.9 Test Case 2
+            var root492 = new TreeNode<int>(50);
+            root492.Left = new TreeNode<int>(20);
+            root492.Left.Left = new TreeNode<int>(10);
+            root492.Left.Right = new TreeNode<int>(25);
+            root492.Right = new TreeNode<int>(60);
+            root492.Right.Right = new TreeNode<int>(70);
+            var result492 = SequenceBinarySearchTree.AllSequences(root492);
+            Console.WriteLine("\nAll Sequences:");
+            for (int i = 0; i < result492.Count; i++)
+            {
+                Console.Write($"{i + 1}) ");
+                var sequence = result492[i];
+                foreach (var item in sequence)
+                {
+                    Console.Write($"{item} --> ");
+                }
+                Console.WriteLine();
+            }
+
+            #endregion
         }
     }
 }
