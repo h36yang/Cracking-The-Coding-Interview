@@ -77,6 +77,62 @@ namespace SortAndSearchApp
             Console.WriteLine($"Index of 1 in the array (v2): {result1031_3b}\n");
 
             #endregion
+
+            #region 10.4
+
+            // 10.4 Test Case 1
+            var listy1041 = new Listy();
+            for (int i = 0; i < 97; i += 2)
+            {
+                listy1041.Add(i);
+            }
+            var result1041_1 = SortedSearchNoSize.Find(listy1041, 30);
+            Console.WriteLine($"Index of 30 in Listy: {result1041_1}");
+            var result1041_2 = SortedSearchNoSize.Find(listy1041, 0);
+            Console.WriteLine($"Index of 0 in Listy: {result1041_2}");
+            var result1041_3 = SortedSearchNoSize.Find(listy1041, 96);
+            Console.WriteLine($"Index of 96 in Listy: {result1041_3}");
+            var result1041_4 = SortedSearchNoSize.Find(listy1041, 1);
+            Console.WriteLine($"Index of 1 in Listy: {result1041_4}\n");
+
+            #endregion
+
+            #region 10.5
+
+            // 10.5 Test Case 1
+            var a1051 = new string[]
+            {
+                "at", "", "", "", "ball", "", "", "car", "", "", "dad", "", ""
+            };
+            Console.Write("Sparse Array: ");
+            foreach (string i in a1051) { Console.Write($"\"{i}\" -> "); }
+            Console.WriteLine();
+
+            var result1051_1 = SparseSearch.Find(a1051, "at");
+            Console.WriteLine($"Index of 'at' in the array: {result1051_1}");
+            var result1051_2 = SparseSearch.Find(a1051, "ball");
+            Console.WriteLine($"Index of 'ball' in the array: {result1051_2}");
+            var result1051_3 = SparseSearch.Find(a1051, "car");
+            Console.WriteLine($"Index of 'car' in the array: {result1051_3}");
+            var result1051_4 = SparseSearch.Find(a1051, "dad");
+            Console.WriteLine($"Index of 'dad' in the array: {result1051_4}\n");
+
+            #endregion
+
+            #region 10.7
+
+            // 10.7 Test Case 1
+            var file1071 = new int[20000];
+            for (int i = 0; i < 20000; i++)
+            {
+                if (i != 12345)
+                {
+                    file1071[i] = i;
+                }
+            }
+            MissingInt.PrintMissingInt(file1071, 19999);
+
+            #endregion
         }
     }
 }
