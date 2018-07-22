@@ -131,8 +131,111 @@ namespace SortAndSearchApp
                 }
             }
             MissingInt.PrintMissingInt(file1071, 19999);
+            Console.WriteLine();
 
             #endregion
+
+            #region 10.9
+
+            // 10.9 Test Case 1
+            var m1091 = new int[,]
+            {
+                { 15, 20, 40, 85 },
+                { 20, 35, 80, 95 },
+                { 30, 55, 95, 105 },
+                { 40, 80, 100, 120 },
+                { 50, 110, 135, 198 }
+            };
+            for (int x = 0; x < m1091.GetLength(0); x++)
+            {
+                Console.Write("[ ");
+                for (int y = 0; y < m1091.GetLength(1); y++)
+                {
+                    Console.Write($"{FormatInt(m1091[x, y], 3)} ");
+                }
+                Console.WriteLine("]");
+            }
+
+            var result1091_1 = SortedMatrixSearch.Find(m1091, 55);
+            Console.WriteLine($"Element 55 is located at ( {result1091_1.Value.Key}, {result1091_1.Value.Value} )");
+            var result1091_2 = SortedMatrixSearch.Find(m1091, 15);
+            Console.WriteLine($"Element 15 is located at ( {result1091_2.Value.Key}, {result1091_2.Value.Value} )");
+            var result1091_3 = SortedMatrixSearch.Find(m1091, 198);
+            Console.WriteLine($"Element 198 is located at ( {result1091_3.Value.Key}, {result1091_3.Value.Value} )\n");
+
+            #endregion
+        
+            #region 10.10
+
+            // 10.10 Test Case 1
+            var stream = new RankFromStream();
+            stream.Track(5);
+            stream.Track(1);
+            stream.Track(4);
+            stream.Track(4);
+            stream.Track(5);
+            stream.Track(9);
+            stream.Track(7);
+            stream.Track(13);
+            stream.Track(3);
+            stream.PrintNumbersInOrder();
+            Console.WriteLine();
+
+            var rank10101_1 = stream.GetRankOfNumber(1);
+            Console.WriteLine($"Rank of number 1 is {rank10101_1}.");
+            var rank10101_2 = stream.GetRankOfNumber(3);
+            Console.WriteLine($"Rank of number 3 is {rank10101_2}.");
+            var rank10101_3 = stream.GetRankOfNumber(4);
+            Console.WriteLine($"Rank of number 4 is {rank10101_3}.");
+            var rank10101_4 = stream.GetRankOfNumber(13);
+            Console.WriteLine($"Rank of number 13 is {rank10101_4}.\n");
+
+            #endregion
+        
+            #region 10.11
+
+            // 10.11 Test Case 1
+            var a10111 = new int[]
+            {
+                5, 3, 1, 2, 3
+            };
+            Console.Write("Original: ");
+            foreach (int i in a10111) { Console.Write($"{i} -> "); }
+            Console.WriteLine();
+
+            PeaksAndValleys.Rearrange_v2(a10111);
+            Console.Write("Peaks and Valleys: ");
+            foreach (int i in a10111) { Console.Write($"{i} -> "); }
+            Console.WriteLine("\n");
+
+            // 10.11 Test Case 2
+            var a10112 = new int[]
+            {
+                1, 2, 3, 4, 5, 6, 7, 8, 9, 0
+            };
+            Console.Write("Original: ");
+            foreach (int i in a10112) { Console.Write($"{i} -> "); }
+            Console.WriteLine();
+
+            PeaksAndValleys.Rearrange_v2(a10112);
+            Console.Write("Peaks and Valleys: ");
+            foreach (int i in a10112) { Console.Write($"{i} -> "); }
+            Console.WriteLine();
+
+            #endregion
+        }
+
+        private static string FormatInt(int value, int digits)
+        {
+            string result = value.ToString();
+            if (result.Length < digits)
+            {
+                for (int i = 0; i < digits - result.Length; i++)
+                {
+                    result = $"0{result}";
+                }
+            }
+            return result;
         }
     }
 }
