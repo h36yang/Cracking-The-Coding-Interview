@@ -214,7 +214,7 @@ namespace DynamicProgrammingApp
             Console.WriteLine("\n");
 
             #endregion
-        
+
             #region 8.7
 
             // 8.7 Test Case 1
@@ -227,7 +227,7 @@ namespace DynamicProgrammingApp
             Console.WriteLine();
 
             #endregion
-        
+
             #region 8.8
 
             // 8.8 Test Case 1
@@ -238,6 +238,134 @@ namespace DynamicProgrammingApp
             Console.WriteLine("All Permutations:");
             foreach (var s in result881) { Console.WriteLine(s); }
             Console.WriteLine();
+
+            #endregion
+
+            #region 8.9
+
+            // 8.9 Test Case 1
+            var result891 = Parens.GetParentheses(1);
+            foreach (var i in result891) { Console.WriteLine(i.Key); }
+            Console.WriteLine();
+
+            // 8.9 Test Case 2
+            var result892 = Parens.GetParentheses(2);
+            foreach (var i in result892) { Console.WriteLine(i.Key); }
+            Console.WriteLine();
+
+            // 8.9 Test Case 3
+            var result893 = Parens.GetParentheses(3);
+            foreach (var i in result893) { Console.WriteLine(i.Key); }
+            Console.WriteLine();
+
+            #endregion
+
+            #region 8.10
+
+            // 8.10 Test Case 1
+            var screen8101 = new PaintFill.Color[,]
+            {
+                { PaintFill.Color.Black, PaintFill.Color.Black, PaintFill.Color.Black, PaintFill.Color.Black },
+                { PaintFill.Color.Black, PaintFill.Color.White, PaintFill.Color.White, PaintFill.Color.Black },
+                { PaintFill.Color.Black, PaintFill.Color.White, PaintFill.Color.White, PaintFill.Color.Black },
+                { PaintFill.Color.Black, PaintFill.Color.Black, PaintFill.Color.White, PaintFill.Color.Black }
+            };
+            for (int r = 0; r < screen8101.GetLength(0); r++)
+            {
+                Console.Write("[ ");
+                for (int c = 0; c < screen8101.GetLength(1); c++)
+                {
+                    Console.Write($"{screen8101[r, c]}, ");
+                }
+                Console.WriteLine("]");
+            }
+            Console.WriteLine();
+
+            PaintFill.FillColor(screen8101, 2, 1, PaintFill.Color.Red);
+            for (int r = 0; r < screen8101.GetLength(0); r++)
+            {
+                Console.Write("[ ");
+                for (int c = 0; c < screen8101.GetLength(1); c++)
+                {
+                    Console.Write($"{screen8101[r, c]}, ");
+                }
+                Console.WriteLine("]");
+            }
+            Console.WriteLine();
+
+            #endregion
+
+            #region 8.11
+
+            // 8.11 Test Case 1
+            var result8111 = Coins.CountCombos(4);
+            Console.WriteLine($"There are {result8111} combination(s) of 4 cents.");
+
+            // 8.11 Test Case 2
+            var result8112 = Coins.CountCombos(5);
+            Console.WriteLine($"There are {result8112} combination(s) of 5 cents.");
+
+            // 8.11 Test Case 3
+            var result8113 = Coins.CountCombos(10);
+            Console.WriteLine($"There are {result8113} combination(s) of 10 cents.");
+
+            // 8.11 Test Case 4
+            var result8114 = Coins.CountCombos(25);
+            Console.WriteLine($"There are {result8114} combination(s) of 25 cents.");
+
+            // 8.11 Test Case 5
+            var result8115 = Coins.CountCombos(26);
+            Console.WriteLine($"There are {result8115} combination(s) of 26 cents.");
+
+            #endregion
+
+            #region 8.12
+
+            // 8.12 Test Case
+            Console.WriteLine("8 Queens on 8x8 Board Combinations:");
+            EightQueens.PrintAllArrangements();
+            Console.WriteLine();
+
+            #endregion
+        
+            #region 8.13
+
+            // 8.13 Test Case 1
+            var b8131 = new List<Box>()
+            {
+                new Box(1, 1, 1),
+                new Box(2, 2, 2),
+                new Box(3, 3, 3),
+                new Box(4, 4, 4),
+                new Box(5, 5, 5)
+            };
+            var result8131 = StackOfBoxes.GetTallestStack(b8131);
+            Console.WriteLine($"Tallest stack height is {result8131}.");
+
+            // 8.13 Test Case 2
+            var b8132 = new List<Box>()
+            {
+                new Box(1, 3, 1),
+                new Box(2, 2, 2),
+                new Box(3, 3, 3),
+                new Box(4, 6, 4),
+                new Box(5, 5, 5)
+            };
+            var result8132 = StackOfBoxes.GetTallestStack(b8132);
+            Console.WriteLine($"Tallest stack height is {result8132}.");
+
+            // 8.13 Test Case 3
+            var b8133 = new List<Box>()
+            {
+                new Box(1, 3, 1),
+                new Box(2, 2, 2),
+                new Box(3, 3, 3),
+                new Box(4, 6, 4),
+                new Box(5, 100, 5),
+                new Box(3, 101, 1)
+            };
+            var result8133 = StackOfBoxes.GetTallestStack(b8133);
+            Console.WriteLine($"Tallest stack height is {result8133}.");
 
             #endregion
         }
