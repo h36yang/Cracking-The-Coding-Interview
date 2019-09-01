@@ -19,7 +19,7 @@ namespace _001_ArraysAndStringsTest
             result = Question_1_1.IsUniqueInplaceNestedLoop(inputStr);
             Assert.IsTrue(result, $"{inputStr} contains duplicates - In-place Nested Loop.");
 
-            result = Question_1_1.IsUniqueInplaceSort(inputStr.ToCharArray());
+            result = Question_1_1.IsUniqueInplaceSort(inputStr);
             Assert.IsTrue(result, $"{inputStr} contains duplicates - In-place Sort.");
         }
 
@@ -38,7 +38,7 @@ namespace _001_ArraysAndStringsTest
             result = Question_1_1.IsUniqueInplaceNestedLoop(inputStr);
             Assert.IsFalse(result, $"{inputStr} is unique - In-place Nested Loop.");
 
-            result = Question_1_1.IsUniqueInplaceSort(inputStr.ToCharArray());
+            result = Question_1_1.IsUniqueInplaceSort(inputStr);
             Assert.IsFalse(result, $"{inputStr} is unique - In-place Sort.");
         }
     }

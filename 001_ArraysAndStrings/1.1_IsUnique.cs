@@ -12,6 +12,8 @@ namespace _001_ArraysAndStrings
     {
         /// <summary>
         /// Implement an algorithm to determine if a string has all unique characters.
+        /// <para>Time Complexity: O(n)</para>
+        /// <para>Space Complexity: O(n)</para>
         /// </summary>
         /// <param name="str"></param>
         /// <returns></returns>
@@ -31,6 +33,8 @@ namespace _001_ArraysAndStrings
 
         /// <summary>
         /// What if you cannot use additional data structures? Nested Loop
+        /// <para>Time Complexity: O(n^2)</para>
+        /// <para>Space Complexity: O(1)</para>
         /// </summary>
         /// <param name="str"></param>
         /// <returns></returns>
@@ -56,12 +60,14 @@ namespace _001_ArraysAndStrings
 
         /// <summary>
         /// What if you cannot use additional data structures? Sort and Loop
+        /// <para>Time Complexity: O(n*log(n))</para>
+        /// <para>Space Complexity: O(1)</para>
         /// </summary>
         /// <param name="str"></param>
         /// <returns></returns>
-        public static bool IsUniqueInplaceSort(char[] str)
+        public static bool IsUniqueInplaceSort(string str)
         {
-            Array.Sort(str);
+            str = Helper.SortString(str); // assuming runtime O(n*log(n))
             for (int i = 0; i < str.Length - 1; i++)
             {
                 if (str[i] == str[i + 1])
