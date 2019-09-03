@@ -1,2 +1,2 @@
-# csharp-test
-C# Test Program - solutions for Cracking the Coding Interview questions
+# Cracking-The-Coding-Interview
+C# solutions for "Cracking the Coding Interview" 6th Edition questions
