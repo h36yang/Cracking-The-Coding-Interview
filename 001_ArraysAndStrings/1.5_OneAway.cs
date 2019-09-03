@@ -29,14 +29,7 @@ namespace _001_ArraysAndStrings
                 return false;
             }
 
-            if (str1.Length > str2.Length)
-            {
-                return CheckOneAway(str1, str2);
-            }
-            else
-            {
-                return CheckOneAway(str2, str1);
-            }
+            return (str1.Length > str2.Length) ? CheckOneAway(str1, str2) : CheckOneAway(str2, str1);
         }
 
         private static bool CheckOneAway(string sLonger, string sShorter)

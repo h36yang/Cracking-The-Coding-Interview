@@ -23,7 +23,7 @@
             char[] charArr = str.ToCharArray();
             while (i < j)
             {
-                if (charArr[i] != ' ')
+                if (!char.IsWhiteSpace(charArr[i]))
                 {
                     charArr[j] = charArr[i];
                     j--;

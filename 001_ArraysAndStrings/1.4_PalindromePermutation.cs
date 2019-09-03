@@ -25,7 +25,7 @@ namespace _001_ArraysAndStrings
             for (int i = 0; i < str.Length; i++)
             {
                 char c = char.ToLowerInvariant(str[i]);
-                if (c == ' ')
+                if (char.IsWhiteSpace(c))
                 {
                     // Skip white spaces
                     continue;
@@ -73,7 +73,7 @@ namespace _001_ArraysAndStrings
             for (int i = 0; i < str.Length; i++)
             {
                 char c = char.ToLowerInvariant(str[i]);
-                if (c == ' ')
+                if (char.IsWhiteSpace(c))
                 {
                     // Skip white spaces
                     continue;
@@ -116,7 +116,7 @@ namespace _001_ArraysAndStrings
             for (int i = 0; i < str.Length; i++)
             {
                 char c = char.ToLowerInvariant(str[i]);
-                if (c == ' ')
+                if (char.IsWhiteSpace(c))
                 {
                     // Skip white spaces
                     continue;
