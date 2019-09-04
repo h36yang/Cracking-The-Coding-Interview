@@ -1,4 +1,6 @@
-﻿namespace _001_ArraysAndStrings
+﻿using System;
+
+namespace _001_ArraysAndStrings
 {
     /// <summary>
     /// 1.7) Rotate Matrix:
@@ -16,7 +18,11 @@
         /// <returns></returns>
         public static int[,] RotateMatrix(int[,] inputMatrix)
         {
-            // assuming the matrix has same length in both dimensions
+            if (!Helper.IsSquareMatrix(inputMatrix))
+            {
+                throw new ArgumentException("Malformed input matrix.");
+            }
+
             int n = inputMatrix.GetLength(0);
             int[,] rotatedMatrix = new int[n, n];
             for (int x = 0; x < n; x++)
@@ -39,7 +45,11 @@
         /// <returns></returns>
         public static int[,] RotateMatrixInplace(int[,] inputMatrix)
         {
-            // assuming the matrix has same length in both dimensions
+            if (!Helper.IsSquareMatrix(inputMatrix))
+            {
+                throw new ArgumentException("Malformed input matrix.");
+            }
+
             int n = inputMatrix.GetLength(0);
             for (int layer = 0; layer < n / 2; layer++)
             {

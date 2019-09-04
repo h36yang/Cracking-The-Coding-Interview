@@ -21,7 +21,7 @@ namespace _001_ArraysAndStringsTest
             };
 
             int[,] resultMatrix = Question_1_7.RotateMatrix(testMatrix);
-            AssertMatricesAreEqual(expectedMatrix, resultMatrix);
+            TestHelper.AssertMatricesAreEqual(expectedMatrix, resultMatrix);
         }
 
         [TestMethod]
@@ -39,7 +39,7 @@ namespace _001_ArraysAndStringsTest
             };
 
             Question_1_7.RotateMatrixInplace(testMatrix);
-            AssertMatricesAreEqual(expectedMatrix, testMatrix);
+            TestHelper.AssertMatricesAreEqual(expectedMatrix, testMatrix);
         }
 
         [TestMethod]
@@ -59,7 +59,7 @@ namespace _001_ArraysAndStringsTest
             };
 
             int[,] resultMatrix = Question_1_7.RotateMatrix(testMatrix);
-            AssertMatricesAreEqual(expectedMatrix, resultMatrix);
+            TestHelper.AssertMatricesAreEqual(expectedMatrix, resultMatrix);
         }
 
         [TestMethod]
@@ -79,7 +79,7 @@ namespace _001_ArraysAndStringsTest
             };
 
             Question_1_7.RotateMatrixInplace(testMatrix);
-            AssertMatricesAreEqual(expectedMatrix, testMatrix);
+            TestHelper.AssertMatricesAreEqual(expectedMatrix, testMatrix);
         }
 
         [TestMethod]
@@ -101,7 +101,7 @@ namespace _001_ArraysAndStringsTest
             };
 
             int[,] resultMatrix = Question_1_7.RotateMatrix(testMatrix);
-            AssertMatricesAreEqual(expectedMatrix, resultMatrix);
+            TestHelper.AssertMatricesAreEqual(expectedMatrix, resultMatrix);
         }
 
         [TestMethod]
@@ -123,18 +123,7 @@ namespace _001_ArraysAndStringsTest
             };
 
             Question_1_7.RotateMatrixInplace(testMatrix);
-            AssertMatricesAreEqual(expectedMatrix, testMatrix);
-        }
-
-        private void AssertMatricesAreEqual(int[,] expectedMatrix, int[,] actualMatrix)
-        {
-            for (int x = 0; x < expectedMatrix.GetLength(0); x++)
-            {
-                for (int y = 0; y < expectedMatrix.GetLength(1); y++)
-                {
-                    Assert.AreEqual(expectedMatrix[x, y], actualMatrix[x, y], $"Value {expectedMatrix[x, y]} and {actualMatrix[x, y]} are not equal at location ({x}, {y}).");
-                }
-            }
+            TestHelper.AssertMatricesAreEqual(expectedMatrix, testMatrix);
         }
     }
 }
