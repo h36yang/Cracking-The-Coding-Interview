@@ -57,22 +57,22 @@ namespace _002_LinkedLists
                 return list;
             }
 
-            Node temp1 = list.Head;
-            while (temp1 != null)
+            Node current = list.Head;
+            while (current != null)
             {
-                Node temp2 = temp1;
-                while (temp2.Next != null)
+                Node runner = current;
+                while (runner.Next != null)
                 {
-                    if (temp1.Data == temp2.Next.Data)
+                    if (current.Data == runner.Next.Data)
                     {
-                        temp2.Next = temp2.Next.Next;
+                        runner.Next = runner.Next.Next;
                     }
                     else
                     {
-                        temp2 = temp2.Next;
+                        runner = runner.Next;
                     }
                 }
-                temp1 = temp1.Next;
+                current = current.Next;
             }
             return list;
         }

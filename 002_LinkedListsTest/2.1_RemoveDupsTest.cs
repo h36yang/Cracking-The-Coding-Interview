@@ -23,5 +23,23 @@ namespace _002_LinkedListsTest
             Question_2_1.RemoveDuplicatesInplace(testList);
             Assert.AreEqual(expectedList, testList);
         }
+
+        [TestMethod]
+        public void RemoveDuplicatesInplaceTest_EmptyList()
+        {
+            var testList = new LinkedList();
+            var expectedList = new LinkedList();
+            Question_2_1.RemoveDuplicatesInplace(testList);
+            Assert.AreEqual(expectedList, testList);
+        }
+
+        [TestMethod]
+        public void RemoveDuplicatesInplaceTest_SingleNode()
+        {
+            var testList = new LinkedList(new int[] { 1 });
+            var expectedList = new LinkedList(new int[] { 1 });
+            Question_2_1.RemoveDuplicatesInplace(testList);
+            Assert.AreEqual(expectedList, testList);
+        }
     }
 }
