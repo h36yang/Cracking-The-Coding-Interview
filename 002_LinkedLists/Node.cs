@@ -2,7 +2,7 @@
 {
     public class Node
     {
-        public int Data { get; private set; }
+        public int Data { get; set; }
 
         public Node Next { get; set; } = null;
 
