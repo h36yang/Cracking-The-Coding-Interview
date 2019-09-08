@@ -18,7 +18,7 @@ namespace _002_LinkedLists
         /// <returns></returns>
         public static LinkedList RemoveDuplicates(LinkedList list)
         {
-            if (list == null || list.Head == null)
+            if (!Helper.IsValidList(list))
             {
                 return list;
             }
@@ -52,7 +52,7 @@ namespace _002_LinkedLists
         /// <returns></returns>
         public static LinkedList RemoveDuplicatesInplace(LinkedList list)
         {
-            if (list == null || list.Head == null)
+            if (!Helper.IsValidList(list))
             {
                 return list;
             }

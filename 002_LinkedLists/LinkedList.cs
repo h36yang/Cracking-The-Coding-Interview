@@ -16,11 +16,32 @@ namespace _002_LinkedLists
 
         public LinkedList(IList<int> dataList)
         {
+            if (dataList == null || dataList.Count <= 0)
+            {
+                return;
+            }
+
             Head = new Node(dataList[0]);
             Node temp = Head;
             for (int i = 1; i < dataList.Count; i++)
             {
                 temp.Next = new Node(dataList[i]);
+                temp = temp.Next;
+            }
+        }
+
+        public LinkedList(Stack<int> stack)
+        {
+            if (stack == null || stack.Count <= 0)
+            {
+                return;
+            }
+
+            Head = new Node(stack.Pop());
+            Node temp = Head;
+            while (stack.Count > 0)
+            {
+                temp.Next = new Node(stack.Pop());
                 temp = temp.Next;
             }
         }

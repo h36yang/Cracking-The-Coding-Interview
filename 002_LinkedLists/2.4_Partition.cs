@@ -18,7 +18,7 @@
         /// <returns></returns>
         public static bool Partition(LinkedList list, int partition)
         {
-            if (list == null || list.Head == null)
+            if (!Helper.IsValidList(list))
             {
                 return false;
             }
@@ -64,7 +64,7 @@
         /// <returns></returns>
         public static bool Partition2(LinkedList list, int partition)
         {
-            if (list == null || list.Head == null)
+            if (!Helper.IsValidList(list))
             {
                 return false;
             }
@@ -130,7 +130,7 @@
         /// <returns></returns>
         public static bool Partition3(LinkedList list, int partition)
         {
-            if (list == null || list.Head == null)
+            if (!Helper.IsValidList(list))
             {
                 return false;
             }

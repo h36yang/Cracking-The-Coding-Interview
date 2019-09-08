@@ -19,7 +19,7 @@ namespace _002_LinkedLists
         /// <returns></returns>
         public static int ReturnKthToLast(LinkedList list, int k)
         {
-            if (list == null || list.Head == null)
+            if (!Helper.IsValidList(list))
             {
                 throw new ArgumentNullException("Invalid Linked List passed in.");
             }
@@ -58,7 +58,7 @@ namespace _002_LinkedLists
         /// <returns></returns>
         public static int ReturnKthToLastRecursive(LinkedList list, int k)
         {
-            if (list == null || list.Head == null)
+            if (!Helper.IsValidList(list))
             {
                 throw new ArgumentNullException("Invalid Linked List passed in.");
             }
@@ -103,7 +103,7 @@ namespace _002_LinkedLists
         /// <returns></returns>
         public static int ReturnKthToLastOnePass(LinkedList list, int k)
         {
-            if (list == null || list.Head == null)
+            if (!Helper.IsValidList(list))
             {
                 throw new ArgumentNullException("Invalid Linked List passed in.");
             }
