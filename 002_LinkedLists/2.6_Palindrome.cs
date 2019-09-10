@@ -63,7 +63,7 @@
             }
 
             // get the length of the list - time O(n)
-            int length = list.Length;
+            (int length, _) = list.GetLengthAndTail();
 
             // check if palindrome recursively - time O(n)
             return IsPalindromeRecursiveInner(list.Head, length).yes;
@@ -81,7 +81,7 @@
             }
             else
             {
-                var (nodeToCompare, yes) = IsPalindromeRecursiveInner(n.Next, length - 2);
+                (Node nodeToCompare, bool yes) = IsPalindromeRecursiveInner(n.Next, length - 2);
                 if (!yes)
                 {
                     return (null, false);

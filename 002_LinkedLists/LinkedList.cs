@@ -77,19 +77,16 @@ namespace _002_LinkedLists
             return ToString().GetHashCode();
         }
 
-        public int Length
+        public (int length, Node tail) GetLengthAndTail()
         {
-            get
+            int length = 1;
+            Node tail = Head;
+            while (tail.Next != null)
             {
-                int length = 0;
-                Node temp = Head;
-                while (temp != null)
-                {
-                    length++;
-                    temp = temp.Next;
-                }
-                return length;
+                length++;
+                tail = tail.Next;
             }
+            return (length, tail);
         }
     }
 }
