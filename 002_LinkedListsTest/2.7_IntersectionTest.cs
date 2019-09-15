@@ -41,7 +41,7 @@ namespace _002_LinkedListsTest
             });
             Node resultNode = Question_2_7.FindIntersection(testList1, testList2);
             Assert.IsNotNull(resultNode, "Lists are not intersecting.");
-            Assert.AreEqual(intersectingNode, resultNode, $"Incorrect intersecting node.");
+            Assert.AreEqual(intersectingNode, resultNode, $"Incorrect intersecting node {intersectingNode.Data} (expected) vs {resultNode.Data} (actual).");
         }
 
         [TestMethod]
@@ -50,7 +50,8 @@ namespace _002_LinkedListsTest
             var testList1 = new LinkedList(new int[] { 1, 2, 3, 4, 5, 6, 7 });
             var testList2 = new LinkedList(new int[] { 9, 8, 10, 5, 6, 7 });
             Node resultNode = Question_2_7.FindIntersection(testList1, testList2);
-            Assert.IsNull(resultNode, $"Lists are intersecting.");
+            int resultData = (resultNode != null) ? resultNode.Data : -1;
+            Assert.IsNull(resultNode, $"Lists are intersecting at node {resultData}.");
         }
     }
 }
