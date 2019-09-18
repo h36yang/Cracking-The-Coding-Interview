@@ -10,6 +10,9 @@ namespace _003_StacksAndQueues
     /// </summary>
     public class Question_3_2
     {
+        /// <summary>
+        /// Keeping a local min within each stack node to keep track
+        /// </summary>
         public class MinStack
         {
             private class StackNode
@@ -60,6 +63,9 @@ namespace _003_StacksAndQueues
             }
         }
 
+        /// <summary>
+        /// Having a separate stack to track the min values - more optimized for larger number of nodes
+        /// </summary>
         public class MinStackOptimized
         {
             private class StackNode

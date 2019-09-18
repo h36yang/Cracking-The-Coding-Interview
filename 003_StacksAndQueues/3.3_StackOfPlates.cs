@@ -15,8 +15,43 @@ namespace _003_StacksAndQueues
     /// </summary>
     public class Question_3_3
     {
-        public class SetOfStacks
+        public class SetOfStacks<T>
         {
+            private const int DEFAULT_THRESHOLD = 10;
+
+            private readonly Stack<Stack<T>> _setOfStacks;
+            private readonly int _threshold;
+
+            public SetOfStacks() : this(DEFAULT_THRESHOLD) { }
+
+            public SetOfStacks(int threshold)
+            {
+                _threshold = threshold;
+                _setOfStacks = new Stack<Stack<T>>();
+            }
+
+            public T Pop()
+            {
+                if (_setOfStacks.Count == 0)
+                {
+                    throw new ArgumentNullException("Stack is empty.", innerException: null);
+                }
+
+                Stack<T> topStack = _setOfStacks.Pop();
+                T item = topStack.Pop();
+                if (topStack.Count > 0)
+                {
+                    _setOfStacks.Push(topStack);
+                }
+                return item;
+            }
+
+            public void Push(T item)
+            {
+                Stack<T> topStack = (_setOfStacks.Count > 0 && _setOfStacks.Peek().Count < _threshold) ? _setOfStacks.Pop() : new Stack<T>();
+                topStack.Push(item);
+                _setOfStacks.Push(topStack);
+            }
         }
     }
 }
