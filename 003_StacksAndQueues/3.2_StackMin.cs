@@ -16,6 +16,56 @@ namespace _003_StacksAndQueues
             {
                 public int Data { get; private set; }
 
+                public int LocalMin { get; private set; }
+
+                public StackNode Below { get; set; }
+
+                public StackNode(int data, int localMin)
+                {
+                    Data = data;
+                    LocalMin = localMin;
+                }
+            }
+
+            private StackNode _top;
+
+            public int Pop()
+            {
+                if (_top == null)
+                {
+                    throw new ArgumentNullException("Stack is empty.", innerException: null);
+                }
+                int item = _top.Data;
+                _top = _top.Below;
+                return item;
+            }
+
+            public void Push(int item)
+            {
+                int min = (_top == null) ? item : Math.Min(item, _top.LocalMin);
+                var node = new StackNode(item, min)
+                {
+                    Below = _top
+                };
+                _top = node;
+            }
+
+            public int Min()
+            {
+                if (_top == null)
+                {
+                    throw new ArgumentNullException("Stack is empty.", innerException: null);
+                }
+                return _top.LocalMin;
+            }
+        }
+
+        public class MinStackOptimized
+        {
+            private class StackNode
+            {
+                public int Data { get; private set; }
+
                 public StackNode Below { get; set; }
 
                 public StackNode(int data)
@@ -26,7 +76,7 @@ namespace _003_StacksAndQueues
 
             private StackNode _top;
 
-            private Stack<int> _minStack = new Stack<int>();
+            private readonly Stack<int> _minStack = new Stack<int>();
 
             public int Pop()
             {

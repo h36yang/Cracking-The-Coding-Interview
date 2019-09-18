@@ -12,6 +12,16 @@ namespace _003_StacksAndQueuesTest
         {
             var test = new Question_3_2.MinStack();
 
+            try
+            {
+                test.Min();
+                Assert.Fail("Empty stack check failed.");
+            }
+            catch (ArgumentNullException e)
+            {
+                Assert.AreEqual("Stack is empty.", e.Message, "Incorrect exception caught.");
+            }
+
             test.Push(10); // 10
             Assert.AreEqual(10, test.Min(), "Min value is not 10.");
 
@@ -44,12 +54,8 @@ namespace _003_StacksAndQueuesTest
 
             test.Pop(); // 10
             Assert.AreEqual(10, test.Min(), "Min value is not 10.");
-        }
 
-        [TestMethod]
-        public void MinTest_NegativeCases()
-        {
-            var test = new Question_3_2.MinStack();
+            test.Pop(); // <Empty>
             try
             {
                 test.Pop();
@@ -59,10 +65,60 @@ namespace _003_StacksAndQueuesTest
             {
                 Assert.AreEqual("Stack is empty.", e.Message, "Incorrect exception caught.");
             }
+        }
+
+        [TestMethod]
+        public void OptimizedMinTest()
+        {
+            var test = new Question_3_2.MinStackOptimized();
 
             try
             {
                 test.Min();
+                Assert.Fail("Empty stack check failed.");
+            }
+            catch (ArgumentNullException e)
+            {
+                Assert.AreEqual("Stack is empty.", e.Message, "Incorrect exception caught.");
+            }
+
+            test.Push(10); // 10
+            Assert.AreEqual(10, test.Min(), "Min value is not 10.");
+
+            test.Push(11); // 10 <- 11
+            Assert.AreEqual(10, test.Min(), "Min value is not 10.");
+
+            test.Push(9); // 10 <- 11 <- 9
+            Assert.AreEqual(9, test.Min(), "Min value is not 9.");
+
+            test.Push(9); // 10 <- 11 <- 9 <- 9
+            Assert.AreEqual(9, test.Min(), "Min value is not 9.");
+
+            test.Push(2); // 10 <- 11 <- 9 <- 9 <- 2
+            Assert.AreEqual(2, test.Min(), "Min value is not 2.");
+
+            test.Push(5); // 10 <- 11 <- 9 <- 9 <- 2 <- 5
+            Assert.AreEqual(2, test.Min(), "Min value is not 2.");
+
+            test.Pop(); // 10 <- 11 <- 9 <- 9 <- 2
+            Assert.AreEqual(2, test.Min(), "Min value is not 2.");
+
+            test.Pop(); // 10 <- 11 <- 9 <- 9
+            Assert.AreEqual(9, test.Min(), "Min value is not 9.");
+
+            test.Pop(); // 10 <- 11 <- 9
+            Assert.AreEqual(9, test.Min(), "Min value is not 9.");
+
+            test.Pop(); // 10 <- 11
+            Assert.AreEqual(10, test.Min(), "Min value is not 10.");
+
+            test.Pop(); // 10
+            Assert.AreEqual(10, test.Min(), "Min value is not 10.");
+
+            test.Pop(); // <Empty>
+            try
+            {
+                test.Pop();
                 Assert.Fail("Empty stack check failed.");
             }
             catch (ArgumentNullException e)
