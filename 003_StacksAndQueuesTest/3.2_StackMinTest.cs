@@ -17,7 +17,7 @@ namespace _003_StacksAndQueuesTest
                 test.Min();
                 Assert.Fail("Empty stack check failed.");
             }
-            catch (ArgumentNullException e)
+            catch (ApplicationException e)
             {
                 Assert.AreEqual("Stack is empty.", e.Message, "Incorrect exception caught.");
             }
@@ -61,7 +61,7 @@ namespace _003_StacksAndQueuesTest
                 test.Pop();
                 Assert.Fail("Empty stack check failed.");
             }
-            catch (ArgumentNullException e)
+            catch (ApplicationException e)
             {
                 Assert.AreEqual("Stack is empty.", e.Message, "Incorrect exception caught.");
             }
@@ -77,7 +77,7 @@ namespace _003_StacksAndQueuesTest
                 test.Min();
                 Assert.Fail("Empty stack check failed.");
             }
-            catch (ArgumentNullException e)
+            catch (ApplicationException e)
             {
                 Assert.AreEqual("Stack is empty.", e.Message, "Incorrect exception caught.");
             }
@@ -121,7 +121,7 @@ namespace _003_StacksAndQueuesTest
                 test.Pop();
                 Assert.Fail("Empty stack check failed.");
             }
-            catch (ArgumentNullException e)
+            catch (ApplicationException e)
             {
                 Assert.AreEqual("Stack is empty.", e.Message, "Incorrect exception caught.");
             }
