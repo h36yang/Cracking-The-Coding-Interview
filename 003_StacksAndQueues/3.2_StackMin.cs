@@ -36,7 +36,7 @@ namespace _003_StacksAndQueues
             {
                 if (_top == null)
                 {
-                    throw new ApplicationException("Stack is empty.");
+                    throw new InvalidOperationException("Stack is empty.");
                 }
                 int item = _top.Data;
                 _top = _top.Below;
@@ -57,7 +57,7 @@ namespace _003_StacksAndQueues
             {
                 if (_top == null)
                 {
-                    throw new ApplicationException("Stack is empty.");
+                    throw new InvalidOperationException("Stack is empty.");
                 }
                 return _top.LocalMin;
             }
@@ -88,7 +88,7 @@ namespace _003_StacksAndQueues
             {
                 if (_top == null)
                 {
-                    throw new ApplicationException("Stack is empty.");
+                    throw new InvalidOperationException("Stack is empty.");
                 }
                 int item = _top.Data;
                 _top = _top.Below;
@@ -118,7 +118,7 @@ namespace _003_StacksAndQueues
             {
                 if (_minStack.Count == 0)
                 {
-                    throw new ApplicationException("Stack is empty.");
+                    throw new InvalidOperationException("Stack is empty.");
                 }
                 return _minStack.Peek();
             }

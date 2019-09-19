@@ -31,7 +31,7 @@ namespace _003_StacksAndQueuesTest
                 test.Pop();
                 Assert.Fail("Empty stack check failed.");
             }
-            catch (ApplicationException e)
+            catch (InvalidOperationException e)
             {
                 Assert.AreEqual("Stack is empty.", e.Message, "Incorrect exception caught.");
             }
@@ -78,7 +78,7 @@ namespace _003_StacksAndQueuesTest
                 test.PopAt(0);
                 Assert.Fail("Empty stack check failed.");
             }
-            catch (ApplicationException e)
+            catch (InvalidOperationException e)
             {
                 Assert.AreEqual("Stack is empty.", e.Message, "Incorrect exception caught.");
             }

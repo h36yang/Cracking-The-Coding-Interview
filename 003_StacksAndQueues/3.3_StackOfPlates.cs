@@ -53,7 +53,7 @@ namespace _003_StacksAndQueues
             {
                 if (IsFull())
                 {
-                    throw new ApplicationException("Stack is at capacity.");
+                    throw new InvalidOperationException("Stack is at capacity.");
                 }
 
                 if (IsEmpty())
@@ -77,7 +77,7 @@ namespace _003_StacksAndQueues
             {
                 if (IsEmpty())
                 {
-                    throw new ApplicationException("Stack is empty.");
+                    throw new InvalidOperationException("Stack is empty.");
                 }
 
                 int item = Top.Data;
@@ -101,7 +101,7 @@ namespace _003_StacksAndQueues
             {
                 if (IsEmpty())
                 {
-                    throw new ApplicationException("Stack is empty.");
+                    throw new InvalidOperationException("Stack is empty.");
                 }
                 return Top.Data;
             }
@@ -110,7 +110,7 @@ namespace _003_StacksAndQueues
             {
                 if (IsEmpty())
                 {
-                    throw new ApplicationException("Stack is empty.");
+                    throw new InvalidOperationException("Stack is empty.");
                 }
 
                 int item = Bottom.Data;
@@ -150,7 +150,7 @@ namespace _003_StacksAndQueues
             {
                 if (_listOfStacks.Count == 0)
                 {
-                    throw new ApplicationException("Stack is empty.");
+                    throw new InvalidOperationException("Stack is empty.");
                 }
 
                 if (index < 0 || index > _listOfStacks.Count - 1)
@@ -177,7 +177,7 @@ namespace _003_StacksAndQueues
             {
                 if (_listOfStacks.Count == 0)
                 {
-                    throw new ApplicationException("Stack is empty.");
+                    throw new InvalidOperationException("Stack is empty.");
                 }
 
                 Stack topStack = _listOfStacks[_listOfStacks.Count - 1];
