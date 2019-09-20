@@ -11,13 +11,20 @@ namespace _003_StacksAndQueues
     {
         public class MyQueue<T>
         {
-            private readonly Stack<T> _queue;
-            private readonly Stack<T> _buffer;
+            /// <summary>
+            /// Stack with first item on top
+            /// </summary>
+            private readonly Stack<T> _stackFirst;
+
+            /// <summary>
+            /// Stack with last item on top
+            /// </summary>
+            private readonly Stack<T> _stackLast;
 
             public MyQueue()
             {
-                _queue = new Stack<T>();
-                _buffer = new Stack<T>();
+                _stackFirst = new Stack<T>();
+                _stackLast = new Stack<T>();
             }
 
             /// <summary>
@@ -26,7 +33,7 @@ namespace _003_StacksAndQueues
             /// <returns></returns>
             public bool IsEmpty()
             {
-                return _queue.Count == 0;
+                return (_stackFirst.Count == 0 && _stackLast.Count == 0);
             }
 
             /// <summary>
@@ -39,7 +46,13 @@ namespace _003_StacksAndQueues
                 {
                     throw new InvalidOperationException("Queue is empty.");
                 }
-                return _queue.Peek();
+
+                // Move everything to the stack with first item on top - O(n)
+                while (_stackLast.Count > 0)
+                {
+                    _stackFirst.Push(_stackLast.Pop());
+                }
+                return _stackFirst.Peek();
             }
 
             /// <summary>
@@ -52,7 +65,13 @@ namespace _003_StacksAndQueues
                 {
                     throw new InvalidOperationException("Queue is empty.");
                 }
-                return _queue.Pop();
+
+                // Move everything to the stack with first item on top - O(n)
+                while (_stackLast.Count > 0)
+                {
+                    _stackFirst.Push(_stackLast.Pop());
+                }
+                return _stackFirst.Pop();
             }
 
             /// <summary>
@@ -61,20 +80,12 @@ namespace _003_StacksAndQueues
             /// <param name="item"></param>
             public void Add(T item)
             {
-                // Move all items from Queue stack to Buffer stack - O(n)
-                while (_queue.Count > 0)
+                // Move everything to the stack with last item on top - O(n)
+                while (_stackFirst.Count > 0)
                 {
-                    _buffer.Push(_queue.Pop());
+                    _stackLast.Push(_stackFirst.Pop());
                 }
-
-                // Push the new item to Queue stack
-                _queue.Push(item);
-
-                // Move everything back from Buffer stack to Queue stack - O(n)
-                while (_buffer.Count > 0)
-                {
-                    _queue.Push(_buffer.Pop());
-                }
+                _stackLast.Push(item);
             }
         }
     }
