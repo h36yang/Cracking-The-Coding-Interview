@@ -17,80 +17,108 @@ namespace _003_StacksAndQueues
         public abstract class Animal
         {
             public int Id { get; protected set; }
+
+            public DateTime ShelterTime { get; set; }
+
+            public Animal(int id)
+            {
+                Id = id;
+            }
         }
 
         public class Dog : Animal
         {
-            public Dog(int id)
-            {
-                Id = id;
-            }
+            public Dog(int id) : base(id) { }
         }
 
         public class Cat : Animal
         {
-            public Cat(int id)
-            {
-                Id = id;
-            }
+            public Cat(int id) : base(id) { }
         }
 
         public class AnimalShelter
         {
-            private readonly LinkedList<Animal> _shelterList = new LinkedList<Animal>();
+            private readonly LinkedList<Dog> _dogsList = new LinkedList<Dog>();
+            private readonly LinkedList<Cat> _catsList = new LinkedList<Cat>();
 
+            /// <summary>
+            /// Runtime O(1)
+            /// </summary>
+            /// <param name="animal"></param>
             public void Enqueue(Animal animal)
             {
-                _shelterList.AddLast(animal);
+                animal.ShelterTime = DateTime.Now;
+                if (animal is Dog)
+                {
+                    _dogsList.AddLast(animal as Dog);
+                }
+                else
+                {
+                    _catsList.AddLast(animal as Cat);
+                }
             }
 
+            /// <summary>
+            /// Runtime O(1)
+            /// </summary>
+            /// <returns></returns>
             public Animal DequeueAny()
             {
-                if (_shelterList.Count == 0)
+                if (_dogsList.Count == 0 && _catsList.Count == 0)
                 {
                     throw new InvalidOperationException("No animals in the shelter.");
                 }
-                LinkedListNode<Animal> oldestAnimal = _shelterList.First;
-                _shelterList.RemoveFirst();
-                return oldestAnimal.Value;
+                Animal oldestDog = _dogsList.Count > 0 ? _dogsList.First.Value : null;
+                Animal oldestCat = _catsList.Count > 0 ? _catsList.First.Value : null;
+                if (oldestDog == null)
+                {
+                    return DequeueCat();
+                }
+                else if (oldestCat == null)
+                {
+                    return DequeueDog();
+                }
+                else
+                {
+                    if (oldestDog.ShelterTime < oldestCat.ShelterTime)
+                    {
+                        return DequeueDog();
+                    }
+                    else
+                    {
+                        return DequeueCat();
+                    }
+                }
             }
 
+            /// <summary>
+            /// Runtime O(1)
+            /// </summary>
+            /// <returns></returns>
             public Dog DequeueDog()
             {
-                if (_shelterList.Count == 0)
+                if (_dogsList.Count == 0)
                 {
-                    throw new InvalidOperationException("No animals in the shelter.");
+                    throw new InvalidOperationException("No dogs in the shelter.");
                 }
-                LinkedListNode<Animal> temp = _shelterList.First;
-                while (temp != null)
-                {
-                    if (temp.Value is Dog)
-                    {
-                        _shelterList.Remove(temp);
-                        return temp.Value as Dog;
-                    }
-                    temp = temp.Next;
-                }
-                throw new InvalidOperationException("No dogs in the shelter.");
+                Dog oldestDog = _dogsList.First.Value;
+                _dogsList.RemoveFirst();
+                return oldestDog;
             }
 
+            /// <summary>
+            /// Runtime O(1)
+            /// </summary>
+            /// <returns></returns>
             public Cat DequeueCat()
             {
-                if (_shelterList.Count == 0)
+                if (_catsList.Count == 0)
                 {
-                    throw new InvalidOperationException("No animals in the shelter.");
+                    throw new InvalidOperationException("No cats in the shelter.");
                 }
-                LinkedListNode<Animal> temp = _shelterList.First;
-                while (temp != null)
-                {
-                    if (temp.Value is Cat)
-                    {
-                        _shelterList.Remove(temp);
-                        return temp.Value as Cat;
-                    }
-                    temp = temp.Next;
-                }
-                throw new InvalidOperationException("No cats in the shelter.");
+                Cat oldestCat = _catsList.First.Value;
+                _catsList.RemoveFirst();
+                return oldestCat;
             }
         }
     }

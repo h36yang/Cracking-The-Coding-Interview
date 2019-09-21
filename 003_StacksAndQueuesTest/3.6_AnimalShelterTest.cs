@@ -15,10 +15,22 @@ namespace _003_StacksAndQueuesTest
             shelter.Enqueue(new Question_3_6.Cat(2)); // Dog 1 -> Cat 2
             shelter.Enqueue(new Question_3_6.Cat(3)); // Dog 1 -> Cat 2 -> Cat 3
             shelter.Enqueue(new Question_3_6.Dog(4)); // Dog 1 -> Cat 2 -> Cat 3 -> Dog 4
-            Assert.AreEqual(1, shelter.DequeueAny().Id, "Incorrect Animial returned.");
-            Assert.AreEqual(2, shelter.DequeueAny().Id, "Incorrect Animial returned.");
-            Assert.AreEqual(3, shelter.DequeueAny().Id, "Incorrect Animial returned.");
-            Assert.AreEqual(4, shelter.DequeueAny().Id, "Incorrect Animial returned.");
+
+            Question_3_6.Animal outputAnimal = shelter.DequeueAny();
+            Assert.IsTrue(outputAnimal is Question_3_6.Dog, "Incorrect Animial type returned - expecting Dog.");
+            Assert.AreEqual(1, outputAnimal.Id, "Incorrect Animial returned.");
+
+            outputAnimal = shelter.DequeueAny();
+            Assert.IsTrue(outputAnimal is Question_3_6.Cat, "Incorrect Animial type returned - expecting Cat.");
+            Assert.AreEqual(2, outputAnimal.Id, "Incorrect Animial returned.");
+
+            outputAnimal = shelter.DequeueAny();
+            Assert.IsTrue(outputAnimal is Question_3_6.Cat, "Incorrect Animial type returned - expecting Cat.");
+            Assert.AreEqual(3, outputAnimal.Id, "Incorrect Animial returned.");
+
+            outputAnimal = shelter.DequeueAny();
+            Assert.IsTrue(outputAnimal is Question_3_6.Dog, "Incorrect Animial type returned - expecting Dog.");
+            Assert.AreEqual(4, outputAnimal.Id, "Incorrect Animial returned.");
 
             try
             {
