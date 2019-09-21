@@ -25,7 +25,7 @@ namespace _002_LinkedLists
             }
 
             // first pass to get total length of the linked list - time O(n)
-            Node temp = list.Head;
+            LinkedListNode temp = list.Head;
             int total = 0;
             while (temp != null)
             {
@@ -76,7 +76,7 @@ namespace _002_LinkedLists
             return data;
         }
 
-        private static (int reversePos, int data) GetReversePositionAndData(Node n, int k)
+        private static (int reversePos, int data) GetReversePositionAndData(LinkedListNode n, int k)
         {
             if (n.Next == null)
             {
@@ -113,8 +113,8 @@ namespace _002_LinkedLists
                 throw new ArgumentOutOfRangeException($"k={k} is not a valid position in the list.");
             }
 
-            Node current = list.Head;
-            Node runner = list.Head;
+            LinkedListNode current = list.Head;
+            LinkedListNode runner = list.Head;
             // move current k nodes into the list - time O(k)
             for (int i = 0; i < k; i++)
             {

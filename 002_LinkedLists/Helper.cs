@@ -18,18 +18,18 @@ namespace _002_LinkedLists
             }
 
             string strValue = value.Value.ToString();
-            Node temp = null;
+            LinkedListNode temp = null;
             for (int i = strValue.Length - 1; i >= 0; i--)
             {
                 int digit = int.Parse(strValue[i].ToString());
                 if (result.Head == null)
                 {
-                    result.Head = new Node(digit);
+                    result.Head = new LinkedListNode(digit);
                     temp = result.Head;
                 }
                 else
                 {
-                    temp.Next = new Node(digit);
+                    temp.Next = new LinkedListNode(digit);
                     temp = temp.Next;
                 }
             }
@@ -45,18 +45,18 @@ namespace _002_LinkedLists
             }
 
             string strValue = value.Value.ToString();
-            Node temp = null;
+            LinkedListNode temp = null;
             for (int i = 0; i < strValue.Length; i++)
             {
                 int digit = int.Parse(strValue[i].ToString());
                 if (result.Head == null)
                 {
-                    result.Head = new Node(digit);
+                    result.Head = new LinkedListNode(digit);
                     temp = result.Head;
                 }
                 else
                 {
-                    temp.Next = new Node(digit);
+                    temp.Next = new LinkedListNode(digit);
                     temp = temp.Next;
                 }
             }
@@ -66,7 +66,7 @@ namespace _002_LinkedLists
         public static Stack<int> ConvertLinkedListToStack(LinkedList list)
         {
             var stack = new Stack<int>();
-            Node temp = list.Head;
+            LinkedListNode temp = list.Head;
             while (temp != null)
             {
                 stack.Push(temp.Data);

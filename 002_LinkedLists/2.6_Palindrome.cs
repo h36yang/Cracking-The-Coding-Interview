@@ -30,7 +30,7 @@
             var stack = Helper.ConvertLinkedListToStack(list);
 
             // compare each node on pop - time O(n)
-            Node temp = list.Head;
+            LinkedListNode temp = list.Head;
             while (temp != null)
             {
                 if (stack.Pop() != temp.Data)
@@ -69,7 +69,7 @@
             return IsPalindromeRecursiveInner(list.Head, length).yes;
         }
 
-        private static (Node nodeToCompare, bool yes) IsPalindromeRecursiveInner(Node n, int length)
+        private static (LinkedListNode nodeToCompare, bool yes) IsPalindromeRecursiveInner(LinkedListNode n, int length)
         {
             if (length == 0)
             {
@@ -81,7 +81,7 @@
             }
             else
             {
-                (Node nodeToCompare, bool yes) = IsPalindromeRecursiveInner(n.Next, length - 2);
+                (LinkedListNode nodeToCompare, bool yes) = IsPalindromeRecursiveInner(n.Next, length - 2);
                 if (!yes)
                 {
                     return (null, false);

@@ -13,7 +13,7 @@
         /// </summary>
         /// <param name="n"></param>
         /// <returns></returns>
-        public static bool DeleteMiddleNode(Node n)
+        public static bool DeleteMiddleNode(LinkedListNode n)
         {
             if (n == null || n.Next == null)
             {

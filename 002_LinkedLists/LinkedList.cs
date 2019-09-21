@@ -5,11 +5,11 @@ namespace _002_LinkedLists
 {
     public class LinkedList
     {
-        public Node Head { get; set; }
+        public LinkedListNode Head { get; set; }
 
         public LinkedList() { }
 
-        public LinkedList(Node head)
+        public LinkedList(LinkedListNode head)
         {
             Head = head;
         }
@@ -21,11 +21,11 @@ namespace _002_LinkedLists
                 return;
             }
 
-            Head = new Node(dataList[0]);
-            Node temp = Head;
+            Head = new LinkedListNode(dataList[0]);
+            LinkedListNode temp = Head;
             for (int i = 1; i < dataList.Count; i++)
             {
-                temp.Next = new Node(dataList[i]);
+                temp.Next = new LinkedListNode(dataList[i]);
                 temp = temp.Next;
             }
         }
@@ -37,11 +37,11 @@ namespace _002_LinkedLists
                 return;
             }
 
-            Head = new Node(stack.Pop());
-            Node temp = Head;
+            Head = new LinkedListNode(stack.Pop());
+            LinkedListNode temp = Head;
             while (stack.Count > 0)
             {
-                temp.Next = new Node(stack.Pop());
+                temp.Next = new LinkedListNode(stack.Pop());
                 temp = temp.Next;
             }
         }
@@ -49,7 +49,7 @@ namespace _002_LinkedLists
         public override string ToString()
         {
             var builder = new StringBuilder();
-            Node temp = Head;
+            LinkedListNode temp = Head;
             while (temp != null)
             {
                 builder.Append(temp.Data);
@@ -77,10 +77,10 @@ namespace _002_LinkedLists
             return ToString().GetHashCode();
         }
 
-        public (int length, Node tail) GetLengthAndTail()
+        public (int length, LinkedListNode tail) GetLengthAndTail()
         {
             int length = 1;
-            Node tail = Head;
+            LinkedListNode tail = Head;
             while (tail.Next != null)
             {
                 length++;

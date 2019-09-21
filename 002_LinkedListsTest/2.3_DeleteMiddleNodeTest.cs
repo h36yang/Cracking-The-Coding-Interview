@@ -10,23 +10,23 @@ namespace _002_LinkedListsTest
         public void DeleteMiddleNodeTest()
         {
             var testList = new LinkedList(
-                new Node(1)
+                new LinkedListNode(1)
                 {
-                    Next = new Node(5)
+                    Next = new LinkedListNode(5)
                     {
-                        Next = new Node(9)
+                        Next = new LinkedListNode(9)
                         {
-                            Next = new Node(12)
+                            Next = new LinkedListNode(12)
                         }
                     }
                 }
             );
             var expectedList = new LinkedList(
-                new Node(1)
+                new LinkedListNode(1)
                 {
-                    Next = new Node(5)
+                    Next = new LinkedListNode(5)
                     {
-                        Next = new Node(12)
+                        Next = new LinkedListNode(12)
                     }
                 }
             );
@@ -39,9 +39,9 @@ namespace _002_LinkedListsTest
         public void DeleteMiddleNodeTest_FailureCases()
         {
             var testList = new LinkedList(
-                new Node(1)
+                new LinkedListNode(1)
                 {
-                    Next = new Node(5)
+                    Next = new LinkedListNode(5)
                 }
             );
             bool success1 = Question_2_3.DeleteMiddleNode(testList.Head.Next);

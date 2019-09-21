@@ -27,7 +27,7 @@ namespace _002_LinkedLists
             {
                 { list.Head.Data, true }
             };
-            Node temp = list.Head;
+            LinkedListNode temp = list.Head;
             while (temp.Next != null)
             {
                 if (buffer.ContainsKey(temp.Next.Data))
@@ -57,10 +57,10 @@ namespace _002_LinkedLists
                 return list;
             }
 
-            Node current = list.Head;
+            LinkedListNode current = list.Head;
             while (current != null)
             {
-                Node runner = current;
+                LinkedListNode runner = current;
                 while (runner.Next != null)
                 {
                     if (current.Data == runner.Next.Data)

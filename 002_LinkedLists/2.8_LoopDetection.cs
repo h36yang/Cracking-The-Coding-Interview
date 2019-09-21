@@ -16,15 +16,15 @@ namespace _002_LinkedLists
         /// </summary>
         /// <param name="list"></param>
         /// <returns></returns>
-        public static Node FindCircularStartNode(LinkedList list)
+        public static LinkedListNode FindCircularStartNode(LinkedList list)
         {
             if (!Helper.IsValidList(list))
             {
                 return null;
             }
 
-            var buffer = new Dictionary<Node, bool>();
-            Node temp = list.Head;
+            var buffer = new Dictionary<LinkedListNode, bool>();
+            LinkedListNode temp = list.Head;
             while (temp != null)
             {
                 if (buffer.ContainsKey(temp))
@@ -44,15 +44,15 @@ namespace _002_LinkedLists
         /// </summary>
         /// <param name="list"></param>
         /// <returns></returns>
-        public static Node FindCircularStartNodeInplace(LinkedList list)
+        public static LinkedListNode FindCircularStartNodeInplace(LinkedList list)
         {
             if (!Helper.IsValidList(list))
             {
                 return null;
             }
 
-            Node faster = list.Head;
-            Node slower = list.Head;
+            LinkedListNode faster = list.Head;
+            LinkedListNode slower = list.Head;
             while (faster != null && faster.Next != null)
             {
                 faster = faster.Next.Next;

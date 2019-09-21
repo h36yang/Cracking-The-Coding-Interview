@@ -32,11 +32,11 @@ namespace _002_LinkedLists
                 return list1;
             }
 
-            Node temp1 = list1.Head;
-            Node temp2 = list2.Head;
+            LinkedListNode temp1 = list1.Head;
+            LinkedListNode temp2 = list2.Head;
             int carry = 0;
             var resultList = new LinkedList();
-            Node resultTemp = null;
+            LinkedListNode resultTemp = null;
             while (temp1 != null || temp2 != null || carry > 0)
             {
                 int digit1 = temp1 != null ? temp1.Data : 0;
@@ -52,12 +52,12 @@ namespace _002_LinkedLists
 
                 if (resultList.Head == null)
                 {
-                    resultList.Head = new Node(sum);
+                    resultList.Head = new LinkedListNode(sum);
                     resultTemp = resultList.Head;
                 }
                 else
                 {
-                    resultTemp.Next = new Node(sum);
+                    resultTemp.Next = new LinkedListNode(sum);
                     resultTemp = resultTemp.Next;
                 }
 

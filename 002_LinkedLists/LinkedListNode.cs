@@ -1,12 +1,12 @@
 ﻿namespace _002_LinkedLists
 {
-    public class Node
+    public class LinkedListNode
     {
         public int Data { get; set; }
 
-        public Node Next { get; set; } = null;
+        public LinkedListNode Next { get; set; } = null;
 
-        public Node(int data)
+        public LinkedListNode(int data)
         {
             Data = data;
         }

@@ -9,37 +9,37 @@ namespace _002_LinkedListsTest
         [TestMethod]
         public void ReturnIntersectionTest_Intersecting()
         {
-            var intersectingNode = new Node(5)
+            var intersectingNode = new LinkedListNode(5)
             {
-                Next = new Node(6)
+                Next = new LinkedListNode(6)
                 {
-                    Next = new Node(7)
+                    Next = new LinkedListNode(7)
                 }
             };
-            var testList1 = new LinkedList(new Node(1)
+            var testList1 = new LinkedList(new LinkedListNode(1)
             {
-                Next = new Node(2)
+                Next = new LinkedListNode(2)
                 {
-                    Next = new Node(3)
+                    Next = new LinkedListNode(3)
                     {
-                        Next = new Node(4)
+                        Next = new LinkedListNode(4)
                         {
                             Next = intersectingNode
                         }
                     }
                 }
             });
-            var testList2 = new LinkedList(new Node(9)
+            var testList2 = new LinkedList(new LinkedListNode(9)
             {
-                Next = new Node(8)
+                Next = new LinkedListNode(8)
                 {
-                    Next = new Node(10)
+                    Next = new LinkedListNode(10)
                     {
                         Next = intersectingNode
                     }
                 }
             });
-            Node resultNode = Question_2_7.FindIntersection(testList1, testList2);
+            LinkedListNode resultNode = Question_2_7.FindIntersection(testList1, testList2);
             Assert.IsNotNull(resultNode, "Lists are not intersecting.");
             Assert.AreEqual(intersectingNode, resultNode, $"Incorrect intersecting node {intersectingNode.Data} (expected) vs {resultNode.Data} (actual).");
         }
@@ -49,7 +49,7 @@ namespace _002_LinkedListsTest
         {
             var testList1 = new LinkedList(new int[] { 1, 2, 3, 4, 5, 6, 7 });
             var testList2 = new LinkedList(new int[] { 9, 8, 10, 5, 6, 7 });
-            Node resultNode = Question_2_7.FindIntersection(testList1, testList2);
+            LinkedListNode resultNode = Question_2_7.FindIntersection(testList1, testList2);
             int resultData = (resultNode != null) ? resultNode.Data : -1;
             Assert.IsNull(resultNode, $"Lists are intersecting at node {resultData}.");
         }

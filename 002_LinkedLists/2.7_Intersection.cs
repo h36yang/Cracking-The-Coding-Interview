@@ -19,7 +19,7 @@ namespace _002_LinkedLists
         /// <param name="list1"></param>
         /// <param name="list2"></param>
         /// <returns></returns>
-        public static Node FindIntersection(LinkedList list1, LinkedList list2)
+        public static LinkedListNode FindIntersection(LinkedList list1, LinkedList list2)
         {
             if (!Helper.IsValidList(list1) || !Helper.IsValidList(list2))
             {
@@ -27,8 +27,8 @@ namespace _002_LinkedLists
             }
 
             // find the tails of both lists - time O(m + n)
-            (int length1, Node tail1) = list1.GetLengthAndTail();
-            (int length2, Node tail2) = list2.GetLengthAndTail();
+            (int length1, LinkedListNode tail1) = list1.GetLengthAndTail();
+            (int length2, LinkedListNode tail2) = list2.GetLengthAndTail();
 
             if (tail1 != tail2)
             {
@@ -38,8 +38,8 @@ namespace _002_LinkedLists
 
             LinkedList longerList = (length1 > length2) ? list1 : list2;
             LinkedList shorterList = (length1 > length2) ? list2 : list1;
-            Node longer = longerList.Head;
-            Node shorter = shorterList.Head;
+            LinkedListNode longer = longerList.Head;
+            LinkedListNode shorter = shorterList.Head;
             // catch up shorter list with the longer list
             int lengthDiff = Math.Abs(length1 - length2);
             for (int i = 0; i < lengthDiff; i++)

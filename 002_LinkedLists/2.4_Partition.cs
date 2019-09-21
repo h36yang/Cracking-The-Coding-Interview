@@ -23,13 +23,13 @@
                 return false;
             }
 
-            Node temp = list.Head.Next;
+            LinkedListNode temp = list.Head.Next;
             bool headBiggerThanPartition = (list.Head.Data >= partition);
             while (temp.Next != null)
             {
                 if (temp.Next.Data < partition)
                 {
-                    Node next = temp.Next.Next;
+                    LinkedListNode next = temp.Next.Next;
 
                     // Insert the node right after Head node
                     var current = temp.Next;
@@ -48,7 +48,7 @@
             // Move Head to Tail if Head is bigger than partition
             if (headBiggerThanPartition)
             {
-                temp.Next = new Node(list.Head.Data);
+                temp.Next = new LinkedListNode(list.Head.Data);
                 list.Head = list.Head.Next;
             }
             return true;
@@ -69,14 +69,14 @@
                 return false;
             }
 
-            Node beforeHead = null;
-            Node beforeTail = null;
-            Node afterHead = null;
-            Node afterTail = null;
+            LinkedListNode beforeHead = null;
+            LinkedListNode beforeTail = null;
+            LinkedListNode afterHead = null;
+            LinkedListNode afterTail = null;
 
             while (list.Head != null)
             {
-                Node next = list.Head.Next;
+                LinkedListNode next = list.Head.Next;
                 list.Head.Next = null;
                 if (list.Head.Data < partition)
                 {
@@ -135,12 +135,12 @@
                 return false;
             }
 
-            Node newHead = null;
-            Node newTail = null;
+            LinkedListNode newHead = null;
+            LinkedListNode newTail = null;
 
             while (list.Head != null)
             {
-                Node next = list.Head.Next;
+                LinkedListNode next = list.Head.Next;
                 list.Head.Next = null;
                 if (list.Head.Data < partition)
                 {
