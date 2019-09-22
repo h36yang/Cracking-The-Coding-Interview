@@ -15,28 +15,28 @@ namespace _004_TreesAndGraphs
         /// </summary>
         /// <param name="uniqueSortedArray"></param>
         /// <returns></returns>
-        public static BinaryTreeNode<int> ConvertToMinimalHeightBST(int[] uniqueSortedArray)
+        public static BinaryTreeNode<int> CreateMinimalHeightBST(int[] uniqueSortedArray)
         {
             if (uniqueSortedArray == null || uniqueSortedArray.Length == 0)
             {
                 throw new ArgumentNullException(nameof(uniqueSortedArray));
             }
-            return ConvertToBST(uniqueSortedArray, 0, uniqueSortedArray.Length - 1);
+            return CreateBST(uniqueSortedArray, 0, uniqueSortedArray.Length - 1);
         }
 
-        private static BinaryTreeNode<int> ConvertToBST(int[] uniqueSortedArray, int startIndex, int endIndex)
+        private static BinaryTreeNode<int> CreateBST(int[] uniqueSortedArray, int startIndex, int endIndex)
         {
             int midIndex = (endIndex - startIndex) / 2 + startIndex;
             var node = new BinaryTreeNode<int>(uniqueSortedArray[midIndex]);
 
             if (midIndex > startIndex)
             {
-                node.Left = ConvertToBST(uniqueSortedArray, startIndex, midIndex - 1);
+                node.Left = CreateBST(uniqueSortedArray, startIndex, midIndex - 1);
             }
 
             if (midIndex < endIndex)
             {
-                node.Right = ConvertToBST(uniqueSortedArray, midIndex + 1, endIndex);
+                node.Right = CreateBST(uniqueSortedArray, midIndex + 1, endIndex);
             }
 
             return node;

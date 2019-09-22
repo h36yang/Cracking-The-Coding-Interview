@@ -14,14 +14,16 @@ namespace _004_TreesAndGraphsTest
         [DataRow(new int[] { 1, 2, 3, 4, 5, 6 }, 3, 3)]
         [DataRow(new int[] { 1, 2, 3, 4, 5, 6, 7 }, 4, 3)]
         [DataRow(new int[] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12 }, 6, 4)]
-        public void ConvertToMinimalHeightBSTTest(int[] testArray, int expectedRootNode, int expectedHeight)
+        public void CreateMinimalHeightBSTTest(int[] testArray, int expectedRootNode, int expectedHeight)
         {
-            BinaryTreeNode<int> resultTree = Question_4_2.ConvertToMinimalHeightBST(testArray);
+            // Act
+            BinaryTreeNode<int> resultTree = Question_4_2.CreateMinimalHeightBST(testArray);
             Helper.PrintBinaryTree(resultTree);
+            List<int> resultTreeInOrder = resultTree.ToListInOrder();
+
+            // Assert
             Assert.AreEqual(expectedRootNode, resultTree.Data, "Incorrect root node returned.");
             Assert.AreEqual(expectedHeight, resultTree.Height, "Incorrect height returned.");
-
-            List<int> resultTreeInOrder = resultTree.ToListInOrder();
             Assert.AreEqual(testArray.Length, resultTreeInOrder.Count, "Incorrect number of nodes returned.");
             for (int i = 0; i < testArray.Length; i++)
             {
