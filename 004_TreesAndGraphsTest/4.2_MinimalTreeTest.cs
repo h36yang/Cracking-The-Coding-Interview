@@ -18,7 +18,7 @@ namespace _004_TreesAndGraphsTest
         {
             // Act
             BinaryTreeNode<int> resultTree = Question_4_2.CreateMinimalHeightBST(testArray);
-            Helper.PrintBinaryTree(resultTree);
+            TestHelper.PrintBinaryTree(resultTree);
             List<int> resultTreeInOrder = resultTree.ToListInOrder();
 
             // Assert

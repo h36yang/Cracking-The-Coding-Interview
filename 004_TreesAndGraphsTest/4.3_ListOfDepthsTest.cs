@@ -43,7 +43,7 @@ namespace _004_TreesAndGraphsTest
                 new LinkedList<int>(new int[] { 8, 9, 10 })
             };
             Console.WriteLine("Input:");
-            Helper.PrintBinaryTree(testRoot);
+            TestHelper.PrintBinaryTree(testRoot);
 
             // Act
             var resultList = Question_4_3.CreateListOfDepthsBFS(testRoot);
@@ -102,7 +102,7 @@ namespace _004_TreesAndGraphsTest
                 new LinkedList<int>(new int[] { 8, 9, 10 })
             };
             Console.WriteLine("Input:");
-            Helper.PrintBinaryTree(testRoot);
+            TestHelper.PrintBinaryTree(testRoot);
 
             // Act
             var resultList = Question_4_3.CreateListOfDepthsDFS(testRoot);

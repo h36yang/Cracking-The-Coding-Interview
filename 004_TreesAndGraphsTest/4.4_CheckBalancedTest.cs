@@ -21,7 +21,7 @@ namespace _004_TreesAndGraphsTest
                 Right = new BinaryTreeNode<int>(3)
             };
             Console.WriteLine("Input:");
-            Helper.PrintBinaryTree(testRoot);
+            TestHelper.PrintBinaryTree(testRoot);
 
             // Act
             bool result = Question_4_4.IsBalanced(testRoot);
@@ -48,7 +48,7 @@ namespace _004_TreesAndGraphsTest
                 Right = new BinaryTreeNode<int>(3)
             };
             Console.WriteLine("Input:");
-            Helper.PrintBinaryTree(testRoot);
+            TestHelper.PrintBinaryTree(testRoot);
 
             // Act
             bool result = Question_4_4.IsBalanced(testRoot);
