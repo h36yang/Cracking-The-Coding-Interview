@@ -58,8 +58,8 @@ namespace _004_TreesAndGraphs
 
         /// <summary>
         /// DFS through the binary tree recursively
-        /// <para>Time Complexity: O(log(n))</para>
-        /// <para>Space Complexity: O(n)</para>
+        /// <para>Time Complexity: O(n)</para>
+        /// <para>Space Complexity: O(log(n))</para>
         /// </summary>
         /// <param name="root"></param>
         /// <returns></returns>

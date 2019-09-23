@@ -10,8 +10,8 @@ namespace _004_TreesAndGraphs
     {
         /// <summary>
         /// Use the middle element as root node, recursively divide the array and construct the left/right subtree
-        /// <para>Time Complexity: O(log(n))</para>
-        /// <para>Space Complexity: O(1)</para>
+        /// <para>Time Complexity: O(n)</para>
+        /// <para>Space Complexity: O(log(n))</para>
         /// </summary>
         /// <param name="uniqueSortedArray"></param>
         /// <returns></returns>
