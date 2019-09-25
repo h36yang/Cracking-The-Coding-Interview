@@ -31,7 +31,7 @@ namespace _004_TreesAndGraphsTest
             {
                 if (node != null)
                 {
-                    Console.Write(node.Data);
+                    Console.Write(node);
                     newNodes.Add(node.Left);
                     newNodes.Add(node.Right);
                 }

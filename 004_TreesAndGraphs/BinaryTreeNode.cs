@@ -11,6 +11,8 @@ namespace _004_TreesAndGraphs
 
         public BinaryTreeNode<T> Right { get; set; }
 
+        public BinaryTreeNode<T> Parent { get; set; }
+
         public BinaryTreeNode(T data)
         {
             Data = data;
@@ -37,6 +39,11 @@ namespace _004_TreesAndGraphs
                 result.AddRange(Right.ToListInOrder());
             }
             return result;
+        }
+
+        public override string ToString()
+        {
+            return Data.ToString();
         }
     }
 }
