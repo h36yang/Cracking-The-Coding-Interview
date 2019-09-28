@@ -41,6 +41,20 @@ namespace _004_TreesAndGraphs
             return result;
         }
 
+        public bool HasChild(BinaryTreeNode<T> node)
+        {
+            if (this == node)
+            {
+                return true;
+            }
+            else
+            {
+                bool leftHasChild = Left?.HasChild(node) ?? false;
+                bool rightHasChild = Right?.HasChild(node) ?? false;
+                return leftHasChild | rightHasChild;
+            }
+        }
+
         public override string ToString()
         {
             return Data.ToString();
