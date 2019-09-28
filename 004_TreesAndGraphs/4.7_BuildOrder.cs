@@ -20,7 +20,7 @@ namespace _004_TreesAndGraphs
         /// <returns></returns>
         public static List<string> GetProjectsBuildOrder(string[] projects, (string, string)[] dependencies)
         {
-            var buildOrder = new List<string>();
+            var buildOrder = new List<string>(projects.Length);
             var buildQueue = new Queue<ProjectNode>(); // Space Complexity O(log(N))
 
             // Convert projects and dependencies to Graph
@@ -59,6 +59,17 @@ namespace _004_TreesAndGraphs
                     }
                 }
             }
+
+            // If there are still projects left with dependencies unfulfilled, it means there is a cycle and return null
+            foreach (ProjectNode project in graph.Nodes)
+            {
+                if (project.Dependencies > 0)
+                {
+                    return null;
+                }
+            }
+
+            // Otherwise, return the buildOrder list
             return buildOrder;
         }
 
