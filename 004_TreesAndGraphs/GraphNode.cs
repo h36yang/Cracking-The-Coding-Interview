@@ -15,5 +15,10 @@ namespace _004_TreesAndGraphs
             Data = data;
             Visited = false;
         }
+
+        public override string ToString()
+        {
+            return Data.ToString();
+        }
     }
 }
