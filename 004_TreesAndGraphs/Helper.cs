@@ -2,7 +2,7 @@
 
 namespace _004_TreesAndGraphs
 {
-    public class Helper
+    public static class Helper
     {
         public static bool IsListSorted(IList<int> list)
         {
@@ -14,6 +14,19 @@ namespace _004_TreesAndGraphs
                 }
             }
             return true;
+        }
+
+        public static void AddRange<T>(this LinkedList<T> list, LinkedList<T> end)
+        {
+            if (end.Count == 0)
+            {
+                return;
+            }
+
+            foreach (T item in end)
+            {
+                list.AddLast(item);
+            }
         }
     }
 }

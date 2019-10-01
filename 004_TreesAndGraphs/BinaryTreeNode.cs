@@ -18,12 +18,9 @@ namespace _004_TreesAndGraphs
             Data = data;
         }
 
-        public int Height
+        public int GetHeight()
         {
-            get
-            {
-                return 1 + Math.Max(Left?.Height ?? 0, Right?.Height ?? 0);
-            }
+            return 1 + Math.Max(Left?.GetHeight() ?? 0, Right?.GetHeight() ?? 0);
         }
 
         public List<T> ToListInOrder()

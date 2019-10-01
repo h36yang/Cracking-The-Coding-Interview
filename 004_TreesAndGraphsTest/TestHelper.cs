@@ -2,14 +2,28 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 
 namespace _004_TreesAndGraphsTest
 {
-    public class TestHelper
+    public static class TestHelper
     {
+        public static void PrintCollection<T>(ICollection<T> collection)
+        {
+            var sb = new StringBuilder();
+            sb.Append("{ ");
+            foreach (T item in collection)
+            {
+                sb.Append(item).Append(", ");
+            }
+            sb.Remove(sb.Length - 2, 2);
+            sb.Append(" }");
+            Console.WriteLine(sb.ToString());
+        }
+
         public static void PrintBinaryTree<T>(BinaryTreeNode<T> root)
         {
-            PrintBinaryTreeInner(new List<BinaryTreeNode<T>>() { root }, 1, root.Height);
+            PrintBinaryTreeInner(new List<BinaryTreeNode<T>>() { root }, 1, root.GetHeight());
         }
 
         private static void PrintBinaryTreeInner<T>(List<BinaryTreeNode<T>> nodes, int level, int maxLevel)

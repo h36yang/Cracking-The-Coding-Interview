@@ -23,7 +23,7 @@ namespace _004_TreesAndGraphsTest
 
             // Assert
             Assert.AreEqual(expectedRootNode, resultTree.Data, "Incorrect root node returned.");
-            Assert.AreEqual(expectedHeight, resultTree.Height, "Incorrect height returned.");
+            Assert.AreEqual(expectedHeight, resultTree.GetHeight(), "Incorrect height returned.");
             Assert.AreEqual(testArray.Length, resultTreeInOrder.Count, "Incorrect number of nodes returned.");
             for (int i = 0; i < testArray.Length; i++)
             {

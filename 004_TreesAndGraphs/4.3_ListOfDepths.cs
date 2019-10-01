@@ -71,7 +71,7 @@ namespace _004_TreesAndGraphs
             }
 
             // Get total height - time O(log(n))
-            int height = root.Height;
+            int height = root.GetHeight();
 
             // Preallocate list with height number of elements - time O(log(n))
             var resultList = new List<LinkedList<T>>(height);
