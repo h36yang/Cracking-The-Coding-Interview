@@ -1,6 +1,7 @@
 ﻿using _004_TreesAndGraphs;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using System.Text;
 
@@ -10,6 +11,11 @@ namespace _004_TreesAndGraphsTest
     {
         public static void PrintCollection<T>(ICollection<T> collection)
         {
+            if (collection == null || collection.Count == 0)
+            {
+                return;
+            }
+
             var sb = new StringBuilder();
             sb.Append("{ ");
             foreach (T item in collection)
@@ -102,6 +108,44 @@ namespace _004_TreesAndGraphsTest
             {
                 Console.Write(" ");
             }
+        }
+    }
+
+    public class LinkedListComparerHelper : IComparer<LinkedList<int>>, IEqualityComparer<LinkedList<int>>
+    {
+        public int Compare([AllowNull] LinkedList<int> x, [AllowNull] LinkedList<int> y)
+        {
+            string xStr = ConvertLinkedListToString(x);
+            string yStr = ConvertLinkedListToString(y);
+            return xStr.CompareTo(yStr);
+        }
+
+        public bool Equals([AllowNull] LinkedList<int> x, [AllowNull] LinkedList<int> y)
+        {
+            string xStr = ConvertLinkedListToString(x);
+            string yStr = ConvertLinkedListToString(y);
+            return xStr.Equals(yStr);
+        }
+
+        public int GetHashCode([DisallowNull] LinkedList<int> obj)
+        {
+            return ConvertLinkedListToString(obj).GetHashCode();
+        }
+
+        private string ConvertLinkedListToString(LinkedList<int> list)
+        {
+            if (list == null || list.Count == 0)
+            {
+                return string.Empty;
+            }
+
+            var sb = new StringBuilder();
+            foreach (int item in list)
+            {
+                sb.Append(item).Append("->");
+            }
+            sb.Remove(sb.Length - 2, 2);
+            return sb.ToString();
         }
     }
 }
