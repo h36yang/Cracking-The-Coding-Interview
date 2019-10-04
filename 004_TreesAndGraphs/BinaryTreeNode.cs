@@ -56,5 +56,37 @@ namespace _004_TreesAndGraphs
         {
             return Data.ToString();
         }
+
+        public override bool Equals(object obj)
+        {
+            if (!(obj is BinaryTreeNode<T> other) || (Left == null && other.Left != null) || (Right == null && other.Right != null))
+            {
+                return false;
+            }
+            else
+            {
+                bool leftEqual = (Left == null && other.Left == null) || Left.Equals(other.Left);
+                bool rightEqual = (Right == null && other.Right == null) || Right.Equals(other.Right);
+                return Data.Equals(other.Data) && leftEqual && rightEqual;
+            }
+        }
+
+        public override int GetHashCode()
+        {
+            unchecked
+            {
+                int hash = 17;
+                hash = hash * 23 + Data.GetHashCode();
+                if (Left != null)
+                {
+                    hash = hash * 23 + Left.GetHashCode();
+                }
+                if (Right != null)
+                {
+                    hash = hash * 23 + Right.GetHashCode();
+                }
+                return hash;
+            }
+        }
     }
 }

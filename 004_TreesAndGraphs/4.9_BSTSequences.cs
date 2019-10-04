@@ -10,9 +10,9 @@ namespace _004_TreesAndGraphs
     public class Question_4_9
     {
         /// <summary>
-        /// 
-        /// <para>Time Complexity: O()</para>
-        /// <para>Space Complexity: O()</para>
+        /// Double recursive logic to generate all possible arrays for both Left and Right subtrees, and weave them together
+        /// <para>Time Complexity: O(n)</para>
+        /// <para>Space Complexity: O(log(n))</para>
         /// </summary>
         /// <param name="root"></param>
         /// <returns></returns>
