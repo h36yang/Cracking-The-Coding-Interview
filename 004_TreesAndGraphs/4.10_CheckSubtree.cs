@@ -13,16 +13,22 @@ namespace _004_TreesAndGraphs
     {
         /// <summary>
         /// Convert both trees to Pre Order strings with placeholder for empty nodes and check if T1 string contains T2 string
-        /// <para>Time Complexity: O(N1)</para>
-        /// <para>Space Complexity: O(log(N1))</para>
+        /// <para>Time Complexity: O(N1+N2)</para>
+        /// <para>Space Complexity: O(N1+N2)</para>
         /// </summary>
         /// <param name="t1">Total number of nodes = N1</param>
-        /// <param name="t2">Total number of nodes = N2, where N2 is smaller than N1</param>
+        /// <param name="t2">Total number of nodes = N2</param>
         /// <returns></returns>
         public static bool CheckSubtree(BinaryTreeNode<int> t1, BinaryTreeNode<int> t2)
         {
-            if (t1 == null || t2 == null)
+            if (t2 == null)
             {
+                // Empty tree is a subtree of every tree
+                return true;
+            }
+            else if (t1 == null)
+            {
+                // Bigger tree is empty, will for sure not contain smaller tree
                 return false;
             }
 
@@ -49,16 +55,22 @@ namespace _004_TreesAndGraphs
 
         /// <summary>
         /// Recursively check if subtree of T1 is equal to T2
-        /// <para>Time Complexity: O(N1*N2)</para>
-        /// <para>Space Complexity: O(log(N1)*log(N2))</para>
+        /// <para>Time Complexity: O(N1*N2) - worse case</para>
+        /// <para>Space Complexity: O(log(N1)+log(N2))</para>
         /// </summary>
-        /// <param name="t1"></param>
-        /// <param name="t2"></param>
+        /// <param name="t1">Total number of nodes = N1</param>
+        /// <param name="t2">Total number of nodes = N2</param>
         /// <returns></returns>
         public static bool CheckSubtreeRecursive(BinaryTreeNode<int> t1, BinaryTreeNode<int> t2)
         {
-            if (t1 == null || t2 == null)
+            if (t2 == null)
             {
+                // Empty tree is a subtree of every tree
+                return true;
+            }
+            else if (t1 == null)
+            {
+                // Bigger tree is empty, will for sure not contain smaller tree
                 return false;
             }
             else if (t1.Equals(t2))

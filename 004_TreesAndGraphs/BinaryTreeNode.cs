@@ -59,16 +59,29 @@ namespace _004_TreesAndGraphs
 
         public override bool Equals(object obj)
         {
-            if (!(obj is BinaryTreeNode<T> other) || (Left == null && other.Left != null) || (Right == null && other.Right != null))
+            if (!(obj is BinaryTreeNode<T> other))
             {
                 return false;
             }
-            else
+
+            if ((Left == null && other.Left != null) || (Right == null && other.Right != null))
             {
-                bool leftEqual = (Left == null && other.Left == null) || Left.Equals(other.Left);
-                bool rightEqual = (Right == null && other.Right == null) || Right.Equals(other.Right);
-                return Data.Equals(other.Data) && leftEqual && rightEqual;
+                return false;
             }
+
+            if (!Data.Equals(other.Data))
+            {
+                return false;
+            }
+
+            bool leftEqual = (Left == null && other.Left == null) || Left.Equals(other.Left);
+            if (!leftEqual)
+            {
+                return false;
+            }
+
+            bool rightEqual = (Right == null && other.Right == null) || Right.Equals(other.Right);
+            return rightEqual;
         }
 
         public override int GetHashCode()
