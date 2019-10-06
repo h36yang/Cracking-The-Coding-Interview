@@ -13,6 +13,8 @@ namespace _004_TreesAndGraphs
 
         public BinaryTreeNode<T> Parent { get; set; }
 
+        public int Size { get; set; } = 1;
+
         public BinaryTreeNode(T data)
         {
             Data = data;
@@ -49,6 +51,23 @@ namespace _004_TreesAndGraphs
                 bool leftHasChild = Left?.HasChild(node) ?? false;
                 bool rightHasChild = Right?.HasChild(node) ?? false;
                 return leftHasChild | rightHasChild;
+            }
+        }
+
+        public BinaryTreeNode<T> GetIthNode(int i)
+        {
+            int leftSize = Left?.Size ?? 0;
+            if (i < leftSize)
+            {
+                return Left.GetIthNode(i);
+            }
+            else if (i == leftSize)
+            {
+                return this;
+            }
+            else
+            {
+                return Right.GetIthNode(i - leftSize - 1);
             }
         }
 
