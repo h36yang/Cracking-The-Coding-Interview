@@ -80,7 +80,7 @@ namespace _004_TreesAndGraphs
         /// <summary>
         /// Keep track of running sums and counts recursively and use math calculations to determine the path counts
         /// <para>Time Complexity: O(n)</para>
-        /// <para>Space Complexity: O(n)</para>
+        /// <para>Space Complexity: O(log(n))</para>
         /// </summary>
         /// <param name="root"></param>
         /// <param name="sum"></param>
