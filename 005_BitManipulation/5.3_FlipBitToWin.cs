@@ -43,7 +43,7 @@ namespace _005_BitManipulation
             var bitBuckets = new LinkedList<BitBucket>();
 
             // Convert decimal number to bits and store in the BitBucket Linked List - runtime O(b), where b is number of bits
-            while (number > 0)
+            while (number != 0)
             {
                 int bit = number & 1;
                 if (bitBuckets.First == null || bitBuckets.First.Value.BitValue != bit)
@@ -98,7 +98,7 @@ namespace _005_BitManipulation
             int maxLength = 1;
             int prevLength = 0;
             int currLength = 0;
-            while (number > 0)
+            while (number != 0)
             {
                 if ((number & 1) == 1)
                 {

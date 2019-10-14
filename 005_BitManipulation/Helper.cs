@@ -2,15 +2,16 @@
 {
     public static class Helper
     {
-        public static int CountBits(int number)
+        public static uint SetBit(uint number, int index)
         {
-            int count = 0;
-            while (number > 0)
-            {
-                count++;
-                number >>= 1;
-            }
-            return count;
+            uint mask = (1u << index);
+            return number | mask;
+        }
+
+        public static uint ClearBit(uint number, int index)
+        {
+            uint mask = ~(1u << index);
+            return number & mask;
         }
     }
 }
