@@ -18,8 +18,8 @@
         public static int PairwiseSwap(int number)
         {
             // Hardcoded masks for 32-bit int (first bit reserved for sign)
-            int eMask = 0b01010101010101010101010101010101;
-            int oMask = 0b00101010101010101010101010101010;
+            int eMask = 0b_0101_0101_0101_0101_0101_0101_0101_0101;
+            int oMask = 0b_0010_1010_1010_1010_1010_1010_1010_1010;
 
             // Separate even and odd portion out
             int evenPortion = number & eMask;
