@@ -27,6 +27,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "007_ObjectOrientedDesign", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "007_ObjectOrientedDesignTest", "007_ObjectOrientedDesignTest\007_ObjectOrientedDesignTest.csproj", "{1F913F08-9F83-4AF0-B14B-27154D514C3E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "008_RecursionAndDynamicProgramming", "008_RecursionAndDynamicProgramming\008_RecursionAndDynamicProgramming.csproj", "{1FE49F58-F168-45FA-9501-6F6B4E244936}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "008_RecursionAndDynamicProgrammingTest", "008_RecursionAndDynamicProgrammingTest\008_RecursionAndDynamicProgrammingTest.csproj", "{3502773F-53F4-46A3-90B2-B7BB0895BF12}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -81,6 +85,14 @@ Global
 		{1F913F08-9F83-4AF0-B14B-27154D514C3E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1F913F08-9F83-4AF0-B14B-27154D514C3E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1F913F08-9F83-4AF0-B14B-27154D514C3E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1FE49F58-F168-45FA-9501-6F6B4E244936}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1FE49F58-F168-45FA-9501-6F6B4E244936}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1FE49F58-F168-45FA-9501-6F6B4E244936}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1FE49F58-F168-45FA-9501-6F6B4E244936}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3502773F-53F4-46A3-90B2-B7BB0895BF12}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3502773F-53F4-46A3-90B2-B7BB0895BF12}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3502773F-53F4-46A3-90B2-B7BB0895BF12}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3502773F-53F4-46A3-90B2-B7BB0895BF12}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
