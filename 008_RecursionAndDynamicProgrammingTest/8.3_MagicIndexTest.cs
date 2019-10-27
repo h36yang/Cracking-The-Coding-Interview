@@ -7,6 +7,7 @@ namespace _008_RecursionAndDynamicProgrammingTest
     public class Question_8_3_Test
     {
         [DataTestMethod]
+        [DataRow(new int[0], -1)]
         [DataRow(new int[] { 1, 2, 3, 4, 5, 6 }, -1)]
         [DataRow(new int[] { -1, 0, 1, 2, 3, 4 }, -1)]
         [DataRow(new int[] { -1, 1, 3, 4, 5, 6 }, 1)]
@@ -22,6 +23,7 @@ namespace _008_RecursionAndDynamicProgrammingTest
         }
 
         [DataTestMethod]
+        [DataRow(new int[0], -1)]
         [DataRow(new int[] { -1, 0, 0, 2, 5, 6 }, -1)]
         [DataRow(new int[] { 0, 0, 0, 2, 4, 5 }, 0)]
         [DataRow(new int[] { 1, 1, 1, 2, 4, 5 }, 1)]

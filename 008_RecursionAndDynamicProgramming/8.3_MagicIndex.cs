@@ -59,6 +59,11 @@ namespace _008_RecursionAndDynamicProgramming
         /// <returns></returns>
         public static int FindMagicIndexNotDistinct(int[] arr)
         {
+            if (arr.Length == 0)
+            {
+                return -1;
+            }
+
             return FindMagicIndexNotDistinctInner(arr, 0, arr.Length - 1);
         }
 
