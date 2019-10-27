@@ -27,8 +27,8 @@ namespace _008_RecursionAndDynamicProgrammingTest
             Console.WriteLine($"Memoization method took {time3.Subtract(time2).TotalMilliseconds} ms.");
 
             // Assert
-            Assert.AreEqual(expectedWays, resultRecursion, "Test failed - Recursion.");
-            Assert.AreEqual(expectedWays, resultMemoization, "Test failed - Memoization.");
+            Assert.AreEqual(expectedWays, resultRecursion, "CountPossibleWays test failed - Recursion.");
+            Assert.AreEqual(expectedWays, resultMemoization, "CountPossibleWays test failed - Memoization.");
         }
     }
 }
