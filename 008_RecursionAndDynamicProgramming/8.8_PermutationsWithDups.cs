@@ -11,7 +11,7 @@ namespace _008_RecursionAndDynamicProgramming
     public static class Question_8_8
     {
         /// <summary>
-        /// 
+        /// Building from permutations of all distinct n-1 character substrings
         /// <para>Time Complexity: O(n^3 * n!) where n is number of chars in the string</para>
         /// <para>Space Complexity: O(n)</para>
         /// </summary>
