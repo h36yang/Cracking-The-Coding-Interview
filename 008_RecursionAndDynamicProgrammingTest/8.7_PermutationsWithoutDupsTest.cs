@@ -23,13 +23,13 @@ namespace _008_RecursionAndDynamicProgrammingTest
             "cabd", "cadb", "cdab", "dcab",
             "cbad", "cbda", "cdba", "dcba",
         }, "abcd")]
-        public void FindAllPermutationsTest(string[] expectedPermutations, string testStr)
+        public void FindAllPermutationsWithoutDupsTest(string[] expectedPermutations, string testStr)
         {
             // Act
             var time1 = DateTime.Now;
-            List<string> resultPermutations1 = Question_8_7.FindAllPermutations1(testStr);
+            List<string> resultPermutations1 = Question_8_7.FindAllPermutationsWithoutDups1(testStr);
             var time2 = DateTime.Now;
-            List<string> resultPermutations2 = Question_8_7.FindAllPermutations2(testStr);
+            List<string> resultPermutations2 = Question_8_7.FindAllPermutationsWithoutDups2(testStr);
             var time3 = DateTime.Now;
 
             Console.WriteLine($"Approach 1 took {time2.Subtract(time1).TotalMilliseconds} ms.");

@@ -15,7 +15,7 @@ namespace _008_RecursionAndDynamicProgramming
         /// </summary>
         /// <param name="str"></param>
         /// <returns></returns>
-        public static List<string> FindAllPermutations1(string str)
+        public static List<string> FindAllPermutationsWithoutDups1(string str)
         {
             var permutations = new List<string>(Helper.Factorial(str.Length));
 
@@ -34,7 +34,7 @@ namespace _008_RecursionAndDynamicProgramming
             string subStr = str.Substring(1); // remove the first character
 
             // Build permutations for the substring - recursion depth n and getting called n times
-            List<string> subPerms = FindAllPermutations1(subStr);
+            List<string> subPerms = FindAllPermutationsWithoutDups1(subStr);
 
             // Insert first character into each sub permutations - runtime O(n^3)
             foreach (string subStrPerm in subPerms)
@@ -56,7 +56,7 @@ namespace _008_RecursionAndDynamicProgramming
         /// </summary>
         /// <param name="str"></param>
         /// <returns></returns>
-        public static List<string> FindAllPermutations2(string str)
+        public static List<string> FindAllPermutationsWithoutDups2(string str)
         {
             var permutations = new List<string>(Helper.Factorial(str.Length));
 
@@ -78,7 +78,7 @@ namespace _008_RecursionAndDynamicProgramming
                 var subStr = str.Substring(0, i) + str.Substring(i + 1); // string concat runtime O(n)
 
                 // Build permutations for the substring - recursion depth n but getting called n! times
-                List<string> subPerms = FindAllPermutations2(subStr);
+                List<string> subPerms = FindAllPermutationsWithoutDups2(subStr);
 
                 // Combine each sub permutations with prefix character - runtime O(n^2)
                 foreach (string subStrPerm in subPerms)
