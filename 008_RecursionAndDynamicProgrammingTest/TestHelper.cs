@@ -1,11 +1,27 @@
-﻿using System;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System;
 using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 
 namespace _008_RecursionAndDynamicProgrammingTest
 {
-    public static class TestHelper { }
+    public static class TestHelper
+    {
+        public static void AssertMatricesAreEqual<T>(T[,] expectedMatrix, T[,] actualMatrix)
+        {
+            Assert.AreEqual(expectedMatrix.GetLength(0), actualMatrix.GetLength(0), "Matrices have different number of rows.");
+            Assert.AreEqual(expectedMatrix.GetLength(1), actualMatrix.GetLength(1), "Matrices have different number of columns.");
+
+            for (int x = 0; x < expectedMatrix.GetLength(0); x++)
+            {
+                for (int y = 0; y < expectedMatrix.GetLength(1); y++)
+                {
+                    Assert.AreEqual(expectedMatrix[x, y], actualMatrix[x, y], $"Values are not equal at location ({x}, {y}).");
+                }
+            }
+        }
+    }
 
     public class HashSetComparerHelper : IComparer<HashSet<int>>, IEqualityComparer<HashSet<int>>
     {
