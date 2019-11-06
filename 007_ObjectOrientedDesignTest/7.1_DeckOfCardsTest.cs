@@ -53,12 +53,12 @@ namespace _007_ObjectOrientedDesignTest
             {
                 expectedScore = 12;
             }
+            Console.WriteLine($"Initial Score: {hand.Score()}. Cards in hand: {hand}");
+
             Assert.AreEqual(expectedScore, hand.Score(), "Incorrect score calculated.");
             Assert.AreEqual(expectedScore > 21, hand.IsBusted, "Check IsBusted failed.");
             Assert.AreEqual(expectedScore == 21, hand.Is21, "Check Is21 failed.");
             Assert.AreEqual(expectedScore == 21, hand.IsBlackjack, "Check IsBlackjack failed.");
-
-            Console.WriteLine($"Initial Score: {hand.Score()}. Cards in hand: {hand}");
 
             // Act 2
             int count = 1;
@@ -81,12 +81,12 @@ namespace _007_ObjectOrientedDesignTest
                     expectedMaxScore += card.MaxValue;
                 }
                 expectedScore = expectedMaxScore > 21 ? expectedMinScore : expectedMaxScore;
+                Console.WriteLine($"Round {count} Score: {hand.Score()}. Cards in hand: {hand}");
+
                 Assert.AreEqual(expectedScore, hand.Score(), "Incorrect score calculated.");
                 Assert.AreEqual(expectedScore > 21, hand.IsBusted, "Check IsBusted failed.");
                 Assert.AreEqual(expectedScore == 21, hand.Is21, "Check Is21 failed.");
                 Assert.IsFalse(hand.IsBlackjack, "Check IsBlackjack failed.");
-
-                Console.WriteLine($"Round {count} Score: {hand.Score()}. Cards in hand: {hand}");
 
                 count++;
             }
