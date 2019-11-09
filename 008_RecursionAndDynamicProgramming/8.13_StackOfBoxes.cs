@@ -29,6 +29,7 @@ namespace _008_RecursionAndDynamicProgramming
         /// <para>Time Complexity: O(n^2) where n is number of boxes</para>
         /// <para>Space Complexity: O(n)</para>
         /// </summary>
+        /// <param name="boxes"></param>
         /// <returns></returns>
         public static int CalculateTallestStackHeightRecursion(Box[] boxes)
         {
@@ -56,6 +57,7 @@ namespace _008_RecursionAndDynamicProgramming
         /// <para>Time Complexity: O(n*log(n)) where n is number of boxes</para>
         /// <para>Space Complexity: O(n)</para>
         /// </summary>
+        /// <param name="boxes"></param>
         /// <returns></returns>
         public static int CalculateTallestStackHeightMemoization(Box[] boxes)
         {
