@@ -12,8 +12,6 @@ namespace _008_RecursionAndDynamicProgramming
     {
         /// <summary>
         /// Using Pure Recursion
-        /// <para>Time Complexity: O()</para>
-        /// <para>Space Complexity: O()</para>
         /// </summary>
         /// <param name="expression"></param>
         /// <param name="expectedResult"></param>
@@ -29,12 +27,12 @@ namespace _008_RecursionAndDynamicProgramming
             if (expression.Length == 1)
             {
                 // Base Case
-                bool result = "1".Equals(expression);
+                bool result = Helper.ConvertBitStringToBoolean(expression);
                 return expectedResult.Equals(result) ? 1 : 0;
             }
 
             int count = 0;
-            // Iterate through the operators and divide the expression into 2 parts - runtime O(p)
+            // Iterate through the operators and divide the expression into 2 parts
             for (int i = 1; i < expression.Length; i += 2)
             {
                 // Substring operations are O(n) runtime in total
@@ -49,8 +47,6 @@ namespace _008_RecursionAndDynamicProgramming
 
         /// <summary>
         /// Using Memoization
-        /// <para>Time Complexity: O()</para>
-        /// <para>Space Complexity: O()</para>
         /// </summary>
         /// <param name="expression"></param>
         /// <param name="expectedResult"></param>
@@ -72,7 +68,7 @@ namespace _008_RecursionAndDynamicProgramming
             if (expression.Length == 1)
             {
                 // Base Case
-                bool result = "1".Equals(expression);
+                bool result = Helper.ConvertBitStringToBoolean(expression);
                 return expectedResult.Equals(result) ? 1 : 0;
             }
 
@@ -82,7 +78,7 @@ namespace _008_RecursionAndDynamicProgramming
             }
 
             int count = 0;
-            // Iterate through the operators and divide the expression into 2 parts - runtime O(p)
+            // Iterate through the operators and divide the expression into 2 parts
             for (int i = 1; i < expression.Length; i += 2)
             {
                 // Substring operations are O(n) runtime in total

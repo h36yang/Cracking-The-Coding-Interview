@@ -17,5 +17,14 @@
             }
             return result;
         }
+
+        public static bool ConvertBitStringToBoolean(string bitStr)
+        {
+            if (string.IsNullOrEmpty(bitStr))
+            {
+                return false;
+            }
+            return "1".Equals(bitStr);
+        }
     }
 }
