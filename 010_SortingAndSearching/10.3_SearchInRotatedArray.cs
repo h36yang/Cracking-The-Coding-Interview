@@ -17,7 +17,7 @@
         /// <returns></returns>
         public static int SearchRotated(int[] rotatedArr, int item)
         {
-            if (rotatedArr == null || rotatedArr.Length == 0)
+            if (Helper.IsCollectionNullOrEmpty(rotatedArr))
             {
                 return -1;
             }

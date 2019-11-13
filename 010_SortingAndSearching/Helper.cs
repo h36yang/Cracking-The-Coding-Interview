@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace _010_SortingAndSearching
 {
@@ -21,6 +22,11 @@ namespace _010_SortingAndSearching
 
             // Convert char array back to string and return - runtime O(n)
             return new string(chars);
+        }
+
+        public static bool IsCollectionNullOrEmpty<T>(IList<T> collection)
+        {
+            return collection == null || collection.Count == 0;
         }
     }
 }
