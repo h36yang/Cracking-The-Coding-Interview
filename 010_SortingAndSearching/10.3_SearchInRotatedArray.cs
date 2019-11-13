@@ -15,7 +15,7 @@
         /// <param name="rotatedArr"></param>
         /// <param name="item"></param>
         /// <returns></returns>
-        public static int Search(int[] rotatedArr, int item)
+        public static int SearchRotated(int[] rotatedArr, int item)
         {
             if (rotatedArr == null || rotatedArr.Length == 0)
             {

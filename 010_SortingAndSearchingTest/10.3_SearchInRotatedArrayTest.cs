@@ -16,13 +16,13 @@ namespace _010_SortingAndSearchingTest
         [DataRow(new int[] { 25, 1, 3, 4, 5, 7, 10, 14, 15, 16, 19, 20 }, 25, 0)]
         [DataRow(new int[] { 2, 2, 2, 2, 3, 4 }, 4, 5)]
         [DataRow(new int[] { 2, 2, 2, 3, 4, 2 }, 4, 4)]
-        public void SearchTest(int[] testArray, int testItem, int expectedIndex)
+        public void SearchRotatedTest(int[] testArray, int testItem, int expectedIndex)
         {
             // Act
-            int resultIndex = Question_10_3.Search(testArray, testItem);
+            int resultIndex = Question_10_3.SearchRotated(testArray, testItem);
 
             // Assert
-            Assert.AreEqual(expectedIndex, resultIndex, "Search test failed.");
+            Assert.AreEqual(expectedIndex, resultIndex, "SearchRotated test failed.");
         }
     }
 }
