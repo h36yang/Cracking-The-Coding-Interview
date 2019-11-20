@@ -75,10 +75,19 @@ namespace _007_ObjectOrientedDesignTest
 
                 int expectedMinScore = 0;
                 int expectedMaxScore = 0;
+                bool aceFound = false;
                 foreach (BlackjackCard card in handOfCards)
                 {
+                    if (!aceFound && card.IsAce)
+                    {
+                        expectedMaxScore += card.MaxValue;
+                        aceFound = true;
+                    }
+                    else
+                    {
+                        expectedMaxScore += card.Value;
+                    }
                     expectedMinScore += card.Value;
-                    expectedMaxScore += card.MaxValue;
                 }
                 expectedScore = expectedMaxScore > 21 ? expectedMinScore : expectedMaxScore;
                 Console.WriteLine($"Round {count} Score: {hand.Score()}. Cards in hand: {hand}");

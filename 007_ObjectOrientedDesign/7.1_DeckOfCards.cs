@@ -48,7 +48,7 @@ namespace _007_ObjectOrientedDesign
 
             public bool IsAce => _value == 1;
 
-            public Card(CardSuit suit, int value)
+            protected Card(CardSuit suit, int value)
             {
                 Suit = suit;
                 _value = value;
@@ -145,7 +145,7 @@ namespace _007_ObjectOrientedDesign
         {
             public List<T> Cards { get; private set; }
 
-            public Hand(List<T> cards)
+            protected Hand(List<T> cards)
             {
                 Cards = new List<T>(cards);
             }
