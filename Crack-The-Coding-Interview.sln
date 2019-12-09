@@ -31,9 +31,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "008_RecursionAndDynamicProg
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "008_RecursionAndDynamicProgrammingTest", "008_RecursionAndDynamicProgrammingTest\008_RecursionAndDynamicProgrammingTest.csproj", "{3502773F-53F4-46A3-90B2-B7BB0895BF12}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "010_SortingAndSearching", "010_SortingAndSearching\010_SortingAndSearching.csproj", "{6500FD38-9629-4A0D-9522-2B10CA32069A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "010_SortingAndSearching", "010_SortingAndSearching\010_SortingAndSearching.csproj", "{6500FD38-9629-4A0D-9522-2B10CA32069A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "010_SortingAndSearchingTest", "010_SortingAndSearchingTest\010_SortingAndSearchingTest.csproj", "{6886E49C-0E0C-417A-8433-519862307516}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "010_SortingAndSearchingTest", "010_SortingAndSearchingTest\010_SortingAndSearchingTest.csproj", "{6886E49C-0E0C-417A-8433-519862307516}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "016_Moderate", "016_Moderate\016_Moderate.csproj", "{5469061C-9D5A-4605-996A-51C361003A1F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "016_ModerateTest", "016_ModerateTest\016_ModerateTest.csproj", "{870E832F-B0AE-4735-A7D3-DB7802D37DE0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -105,6 +109,14 @@ Global
 		{6886E49C-0E0C-417A-8433-519862307516}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6886E49C-0E0C-417A-8433-519862307516}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6886E49C-0E0C-417A-8433-519862307516}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5469061C-9D5A-4605-996A-51C361003A1F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5469061C-9D5A-4605-996A-51C361003A1F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5469061C-9D5A-4605-996A-51C361003A1F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5469061C-9D5A-4605-996A-51C361003A1F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{870E832F-B0AE-4735-A7D3-DB7802D37DE0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{870E832F-B0AE-4735-A7D3-DB7802D37DE0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{870E832F-B0AE-4735-A7D3-DB7802D37DE0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{870E832F-B0AE-4735-A7D3-DB7802D37DE0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
