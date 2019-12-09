@@ -5,4 +5,8 @@
     <RootNamespace>_010_SortingAndSearching</RootNamespace>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\004_TreesAndGraphs\004_TreesAndGraphs.csproj" />
+  </ItemGroup>
+
 </Project>
