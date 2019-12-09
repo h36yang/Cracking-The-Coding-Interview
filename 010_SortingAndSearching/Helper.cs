@@ -28,5 +28,12 @@ namespace _010_SortingAndSearching
         {
             return collection == null || collection.Count == 0;
         }
+
+        public static void SwapArrayElements<T>(T[] arr, int pos1, int pos2)
+        {
+            T temp = arr[pos1];
+            arr[pos1] = arr[pos2];
+            arr[pos2] = temp;
+        }
     }
 }
