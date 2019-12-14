@@ -35,9 +35,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "010_SortingAndSearching", "
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "010_SortingAndSearchingTest", "010_SortingAndSearchingTest\010_SortingAndSearchingTest.csproj", "{6886E49C-0E0C-417A-8433-519862307516}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "016_Moderate", "016_Moderate\016_Moderate.csproj", "{5469061C-9D5A-4605-996A-51C361003A1F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "016_Moderate", "016_Moderate\016_Moderate.csproj", "{5469061C-9D5A-4605-996A-51C361003A1F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "016_ModerateTest", "016_ModerateTest\016_ModerateTest.csproj", "{870E832F-B0AE-4735-A7D3-DB7802D37DE0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "016_ModerateTest", "016_ModerateTest\016_ModerateTest.csproj", "{870E832F-B0AE-4735-A7D3-DB7802D37DE0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

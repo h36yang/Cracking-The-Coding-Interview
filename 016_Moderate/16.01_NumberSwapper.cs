@@ -13,7 +13,6 @@
         /// </summary>
         /// <param name="num1"></param>
         /// <param name="num2"></param>
-        /// <returns></returns>
         public static void SwapNumber(ref int num1, ref int num2)
         {
             // Store diff in num1
