@@ -20,6 +20,24 @@ namespace _004_TreesAndGraphs
             Data = data;
         }
 
+        public void SetLeft(BinaryTreeNode<T> left)
+        {
+            Left = left;
+            if (Left != null)
+            {
+                Left.Parent = this;
+            }
+        }
+
+        public void SetRight(BinaryTreeNode<T> right)
+        {
+            Right = right;
+            if (Right != null)
+            {
+                Right.Parent = this;
+            }
+        }
+
         public int GetHeight()
         {
             return 1 + Math.Max(Left?.GetHeight() ?? 0, Right?.GetHeight() ?? 0);
