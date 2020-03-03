@@ -5,6 +5,8 @@ namespace _000_RealQuestions
 {
     public static class Google
     {
+        #region Min Days to Bloom
+
         /// <summary>
         /// Google | OA | Min Days to Bloom
         /// </summary>
@@ -82,5 +84,7 @@ namespace _000_RealQuestions
             }
             return result;
         }
+
+        #endregion
     }
 }
