@@ -1,5 +1,6 @@
 using _000_RealQuestions;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System;
 
 namespace _000_RealQuestionsTest
 {
@@ -22,6 +23,43 @@ namespace _000_RealQuestionsTest
 
             // Assert
             Assert.AreEqual(expected, result);
+        }
+
+        [DataTestMethod]
+        [DataRow(new int[] { 1, 1, 2, 2, 3, 3, 3, 4, 5, 6, 7 }, 3)]
+        [DataRow(new int[] { 1, 1, 2, 2, 3, 3, 4, 5, 7, 7, 7 }, 7)]
+        [DataRow(new int[] { 1, 1, 2, 3 }, 1)]
+        [DataRow(new int[] { 1, 2, 2, 2, 2, 2, 3, 3, 4, 4, 4, 5, 5, 5, 6, 6 }, 2)]
+        [DataRow(new int[] { 1, 2, 3, 4, 5, 5, 6, 7, 8, 10 }, int.MinValue)]
+        public void FindQuarterMajority(int[] testArray, int expected)
+        {
+            try
+            {
+                // Act
+                int result = Facebook.FindQuarterMajority(testArray);
+
+                // Assert
+                if (expected > int.MinValue)
+                {
+                    Assert.AreEqual(expected, result);
+                }
+                else
+                {
+                    Assert.Fail();
+                }
+            }
+            catch (ArgumentException e)
+            {
+                // Assert Exception
+                if (expected == int.MinValue)
+                {
+                    Assert.AreEqual("Quarter Majority does not exist.", e.Message);
+                }
+                else
+                {
+                    Assert.Fail();
+                }
+            }
         }
     }
 }
