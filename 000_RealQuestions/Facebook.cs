@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace _000_RealQuestions
 {
@@ -84,6 +85,32 @@ namespace _000_RealQuestions
                 }
             }
             return start;
+        }
+
+        #endregion
+
+        #region Schedule of Tasks
+
+        public static List<int[]> FindOverlappingIntervals(int[][] tasks)
+        {
+            var res = new List<int[]>();
+            int[] prev = null;
+            foreach (int[] task in tasks)
+            {
+                if (prev == null || task[0] >= prev[1])
+                {
+                    prev = task;
+                }
+                else
+                {
+                    res.Add(new int[] { Math.Max(prev[0], task[0]), Math.Min(prev[1], task[1]) });
+                    if (task[1] > prev[1])
+                    {
+                        prev = task;
+                    }
+                }
+            }
+            return res;
         }
 
         #endregion

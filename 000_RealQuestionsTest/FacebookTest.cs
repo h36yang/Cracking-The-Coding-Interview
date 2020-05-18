@@ -1,6 +1,7 @@
 using _000_RealQuestions;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
+using System.Collections.Generic;
 
 namespace _000_RealQuestionsTest
 {
@@ -31,7 +32,7 @@ namespace _000_RealQuestionsTest
         [DataRow(new int[] { 1, 1, 2, 3 }, 1)]
         [DataRow(new int[] { 1, 2, 2, 2, 2, 2, 3, 3, 4, 4, 4, 5, 5, 5, 6, 6 }, 2)]
         [DataRow(new int[] { 1, 2, 3, 4, 5, 5, 6, 7, 8, 10 }, int.MinValue)]
-        public void FindQuarterMajority(int[] testArray, int expected)
+        public void FindQuarterMajorityTest(int[] testArray, int expected)
         {
             try
             {
@@ -59,6 +60,37 @@ namespace _000_RealQuestionsTest
                 {
                     Assert.Fail();
                 }
+            }
+        }
+
+        [TestMethod]
+        public void FindOverlappingIntervalsTest()
+        {
+            // Arrange
+            var tasks = new int[][]
+            {
+                new int[] { 1, 10 },
+                new int[] { 2, 6 },
+                new int[] { 9, 12 },
+                new int[] { 14, 16 },
+                new int[] { 16, 17 }
+            };
+
+            var expected = new List<int[]>
+            {
+                new int[] { 2, 6 },
+                new int[] { 9, 10 }
+            };
+
+            // Act
+            List<int[]> result = Facebook.FindOverlappingIntervals(tasks);
+
+            // Assert
+            Assert.AreEqual(expected.Count, result.Count);
+            for (int i = 0; i < expected.Count; i++)
+            {
+                Assert.AreEqual(expected[i][0], result[i][0]);
+                Assert.AreEqual(expected[i][1], result[i][1]);
             }
         }
     }
