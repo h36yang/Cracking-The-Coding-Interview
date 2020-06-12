@@ -114,7 +114,7 @@ namespace _000_RealQuestionsTest
         {
             // Arrange
             var counts = new int[m, n];
-            int total = m * n * 10000;
+            int total = m * n * 20000;
 
             for (int i = 0; i < total; i++)
             {
@@ -130,12 +130,16 @@ namespace _000_RealQuestionsTest
                 }
             }
 
-            Console.WriteLine($"Target Probability: {Math.Round((double)k * 100 / (m * n), 2)}%.");
+            // Further Assert
+            double expectedProbability = (double)k * 100 / (m * n);
+            double threshold = 0.5;
             for (int r = 0; r < m; r++)
             {
                 for (int c = 0; c < n; c++)
                 {
-                    Console.WriteLine($"Probability of ({r}, {c}) is {Math.Round((double)counts[r, c] * 100 / total, 2)}%.");
+                    double probability = (double)counts[r, c] * 100 / total;
+                    Console.WriteLine($"Probability of ({r}, {c}) is {Math.Round(probability, 2)}%.");
+                    Assert.AreEqual(expectedProbability, probability, threshold);
                 }
             }
         }

@@ -148,6 +148,13 @@ namespace _000_RealQuestions
 
         #region Randomly Generate Mines on a Grid
 
+        /// <summary>
+        /// You are given a m*n grid. You are asked to generate k mines on this grid randomly. Each cell should have equal probability of k / m*n of being chosen.
+        /// </summary>
+        /// <param name="m"></param>
+        /// <param name="n"></param>
+        /// <param name="k"></param>
+        /// <returns></returns>
         public static List<(int r, int c)> GenerateKMinesOnGrid(int m, int n, int k)
         {
             var res = new List<(int, int)>(k);
