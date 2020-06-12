@@ -114,5 +114,36 @@ namespace _000_RealQuestions
         }
 
         #endregion
+
+        #region Number of Subsets
+
+        /// <summary>
+        /// For a given list of integers and integer k, find the number of non-empty subsets S such that min(S) + max(S) <= k.
+        /// </summary>
+        /// <param name="nums"></param>
+        /// <param name="k"></param>
+        /// <returns></returns>
+        public static int MinMaxKSubsets(int[] nums, int k)
+        {
+            Array.Sort(nums);
+            int left = 0;
+            int right = nums.Length - 1;
+            int count = 0;
+            while (left <= right)
+            {
+                if (nums[left] + nums[right] > k)
+                {
+                    right--;
+                }
+                else
+                {
+                    count += (int)Math.Pow(2, right - left);
+                    left++;
+                }
+            }
+            return count;
+        }
+
+        #endregion
     }
 }

@@ -93,5 +93,18 @@ namespace _000_RealQuestionsTest
                 Assert.AreEqual(expected[i][1], result[i][1]);
             }
         }
+
+        [DataTestMethod]
+        [DataRow(new int[] { 2, 4, 5, 7 }, 8, 5)]
+        [DataRow(new int[] { 1, 4, 3, 2 }, 8, 15)]
+        [DataRow(new int[] { 2, 4, 2, 5, 7 }, 10, 27)]
+        public void MinMaxKSubsetsTest(int[] nums, int k, int expected)
+        {
+            // Act
+            int result = Facebook.MinMaxKSubsets(nums, k);
+
+            // Assert
+            Assert.AreEqual(expected, result);
+        }
     }
 }
