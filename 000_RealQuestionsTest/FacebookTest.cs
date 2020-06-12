@@ -106,5 +106,38 @@ namespace _000_RealQuestionsTest
             // Assert
             Assert.AreEqual(expected, result);
         }
+
+        [DataTestMethod]
+        [DataRow(4, 4, 1)]
+        [DataRow(10, 10, 5)]
+        public void GenerateKMinesOnGridTest(int m, int n, int k)
+        {
+            // Arrange
+            var counts = new int[m, n];
+            int total = m * n * 10000;
+
+            for (int i = 0; i < total; i++)
+            {
+                // Act
+                List<(int, int)> results = Facebook.GenerateKMinesOnGrid(m, n, k);
+
+                // Assert
+                Assert.AreEqual(k, results.Count);
+
+                foreach ((int r, int c) in results)
+                {
+                    counts[r, c]++;
+                }
+            }
+
+            Console.WriteLine($"Target Probability: {Math.Round((double)k * 100 / (m * n), 2)}%.");
+            for (int r = 0; r < m; r++)
+            {
+                for (int c = 0; c < n; c++)
+                {
+                    Console.WriteLine($"Probability of ({r}, {c}) is {Math.Round((double)counts[r, c] * 100 / total, 2)}%.");
+                }
+            }
+        }
     }
 }

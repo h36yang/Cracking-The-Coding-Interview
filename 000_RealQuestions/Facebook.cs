@@ -145,5 +145,41 @@ namespace _000_RealQuestions
         }
 
         #endregion
+
+        #region Randomly Generate Mines on a Grid
+
+        public static List<(int r, int c)> GenerateKMinesOnGrid(int m, int n, int k)
+        {
+            var res = new List<(int, int)>(k);
+
+            int total = m * n;
+            for (int r = 0; r < m; r++)
+            {
+                for (int c = 0; c < n; c++)
+                {
+                    int candidate = Helper.Next(total);
+                    if (candidate < k)
+                    {
+                        res.Add((r, c));
+                        k--;
+                    }
+                    total--;
+
+                    if (k == 0)
+                    {
+                        break;
+                    }
+                }
+
+                if (k == 0)
+                {
+                    break;
+                }
+            }
+
+            return res;
+        }
+
+        #endregion
     }
 }

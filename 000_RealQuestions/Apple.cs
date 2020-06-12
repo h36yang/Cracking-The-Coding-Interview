@@ -44,24 +44,14 @@ namespace _000_RealQuestions
 
     public static class AppleHelper
     {
-        private static Random _random;
-
         public static double RandomNum1to6()
         {
-            if (_random == null)
-            {
-                _random = new Random();
-            }
-            return _random.NextDouble() * 5 + 1;
+            return Helper.NextDouble() * 5 + 1;
         }
 
         public static int RandomInt1to6()
         {
-            if (_random == null)
-            {
-                _random = new Random();
-            }
-            return _random.Next(1, 7);
+            return Helper.Next(1, 7);
         }
     }
 }

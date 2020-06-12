@@ -29,8 +29,8 @@ namespace _000_RealQuestionsTest
             // Assert
             for (int k = 1; k <= n; k++)
             {
-                Console.WriteLine($"V1 - Probability of {k} is {Math.Round((double)results[k] * 100 / total, 1)}%.");
-                Console.WriteLine($"V2 - Probability of {k} is {Math.Round((double)resultsV2[k] * 100 / total, 1)}%.");
+                Console.WriteLine($"V1 - Probability of {k} is {Math.Round((double)results[k] * 100 / total, 2)}%.");
+                Console.WriteLine($"V2 - Probability of {k} is {Math.Round((double)resultsV2[k] * 100 / total, 2)}%.");
             }
             Assert.IsTrue(true);
         }
