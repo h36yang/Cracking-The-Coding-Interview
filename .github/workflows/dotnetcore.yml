@@ -12,6 +12,6 @@ jobs:
     - name: Setup .NET Core
       uses: actions/setup-dotnet@v1
       with:
-        dotnet-version: 3.1.302
+        dotnet-version: 3.1.401
     - name: Build and Run Unit Tests with dotnet
       run: dotnet test --configuration Release
